@@ -15,7 +15,7 @@
         app:layout_constraintTop_toTopOf="parent">
 
         <TextView
-            android:id="@+id/tv_calendar_1"
+            android:id="@+id/tv_calendar"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:fontFamily="@font/pretendard_semi_bold"
@@ -42,17 +42,16 @@
         app:mcv_showOtherDates="defaults"
         app:mcv_weekDayTextAppearance="@style/Calendar" />
 
-    <TextView
-        android:id="@+id/tv_calendar_2"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:fontFamily="@font/pretendard_medium"
-        android:text="투표 시작일: 정기 모임 참석 여부"
-        android:textColor="@color/secondary_grey_black_2"
-        android:textSize="18sp"
-        android:layout_marginLeft="20dp"
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/rv_calendar"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/cv_calendar" />
+        app:layout_constraintTop_toBottomOf="@+id/cv_calendar"
+        app:layout_constraintVertical_bias="0.0" />
 
 
 
