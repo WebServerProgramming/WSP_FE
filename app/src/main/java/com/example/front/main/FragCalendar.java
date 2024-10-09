@@ -75,6 +75,8 @@ public class FragCalendar extends Fragment {
 
         Main2Data main2Data = new Main2Data(R.drawable.basketball,"투표 종료일: 행사 참가자", CalendarDay.from(2024,9,5));
         addData(main2Data.getCalendarDay(), main2Data);
+        main2Data = new Main2Data(R.drawable.tennis,"투표 시작일: 동아리 회식 인원 투표", CalendarDay.from(2024,9,5));
+        addData(main2Data.getCalendarDay(), main2Data);
 
         calendarDayList.add(CalendarDay.from(2024,9,5));
         calendarDayList.add(CalendarDay.from(2024,9,13));

@@ -55,7 +55,7 @@ public class FragRoom extends Fragment {
         btnMain1Add.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(getContext(), RoomCreateActivity.class);
+                Intent intent = new Intent(getContext(), RoomListActivity.class);
                 startActivity(intent);
             }
         });
