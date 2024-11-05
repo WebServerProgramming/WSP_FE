@@ -1,49 +1,48 @@
-package com.example.front.main;
+package com.example.front.room;
 
-import android.content.Intent;
+import android.content.res.ColorStateList;
+import android.graphics.Color;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.ImageView;
+import android.widget.Button;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.front.R;
-import com.example.front.room.RoomActivity;
 
 import java.util.ArrayList;
 
-public class Main1Adapter extends RecyclerView.Adapter<Main1Adapter.CustomViewHolder>{
+public class VoteAdapter extends RecyclerView.Adapter<VoteAdapter.CustomViewHolder>{
 
-    private ArrayList<Main1Data> arrayList;
+    private ArrayList<VoteData> arrayList;
 
-    public Main1Adapter(ArrayList<Main1Data> arrayList) {
+    public VoteAdapter(ArrayList<VoteData> arrayList) {
         this.arrayList = arrayList;
     }
 
     @NonNull
     @Override
-    public Main1Adapter.CustomViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
-        View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.item_list, parent,false);
+    public VoteAdapter.CustomViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
+        View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.item_vote, parent,false);
         CustomViewHolder holder = new CustomViewHolder(view);
 
         return holder;
     }
 
     @Override
-    public void onBindViewHolder(@NonNull Main1Adapter.CustomViewHolder holder, int position) {
-        holder.ivClub.setImageResource(arrayList.get(position).getIvClub());
-        holder.tvClub.setText(arrayList.get(position).getTvClub());
+    public void onBindViewHolder(@NonNull VoteAdapter.CustomViewHolder holder, int position) {
+        String content = arrayList.get(position).getTvVoteContent();
+        holder.tvVoteContent.setText(content);
 
         holder.itemView.setTag(position);
         holder.itemView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(view.getContext(), RoomActivity.class);
-                view.getContext().startActivity(intent);
+                //Intent intent = new Intent(view.getContext(), RoomActivity.class);
+                ///view.getContext().startActivity(intent);
                 //String curName = holder.tvClub.getText().toString();
                 //Toast.makeText(view.getContext(), curName, Toast.LENGTH_SHORT).show();
             }
@@ -67,13 +66,13 @@ public class Main1Adapter extends RecyclerView.Adapter<Main1Adapter.CustomViewHo
 
     public class CustomViewHolder extends RecyclerView.ViewHolder {
 
-        protected ImageView ivClub;
-        protected TextView tvClub;
+        protected Button btnVoteRadio;
+        protected TextView tvVoteContent;
 
         public CustomViewHolder(@NonNull View itemView) {
             super(itemView);
-            this.ivClub = (ImageView) itemView.findViewById(R.id.iv_club);
-            this.tvClub = (TextView) itemView.findViewById(R.id.tv_club);
+            this.btnVoteRadio = (Button) itemView.findViewById(R.id.btn_vote_radio);
+            this.tvVoteContent = (TextView) itemView.findViewById(R.id.tv_vote_content);
         }
     }
 }

@@ -15,6 +15,15 @@
         android:theme="@style/Theme.WSP_FE"
         tools:targetApi="31">
         <activity
+            android:name=".room.VoteActivity"
+            android:exported="false" />
+        <activity
+            android:name=".room.NoticeActivity"
+            android:exported="false" />
+        <activity
+            android:name=".room.RoomActivity"
+            android:exported="false" />
+        <activity
             android:name=".main.RoomListActivity"
             android:exported="false" />
         <activity

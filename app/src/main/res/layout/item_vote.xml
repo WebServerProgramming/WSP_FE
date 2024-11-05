@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:padding="10dp"
+    android:layout_marginBottom="10dp">
+
+
+    <Button
+        android:id="@+id/btn_vote_radio"
+        android:layout_width="45dp"
+        android:layout_height="45dp"
+        android:background="@drawable/baseline_radio_button_unchecked_24"
+        android:layout_gravity="center"
+        android:backgroundTint="@color/secondary_grey_black_2"/>
+
+    <TextView
+        android:padding="5dp"
+        android:id="@+id/tv_vote_content"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:layout_marginLeft="12dp"
+        android:fontFamily="@font/pretendard_semi_bold"
+        android:text="투표 내용"
+        android:textColor="@color/secondary_grey_black_2"
+        android:textSize="24sp"
+        android:layout_gravity="center"
+        android:background="@drawable/layout_round_radius8_black12"
+        android:backgroundTint="@color/secondary_grey_black_8"
+        android:paddingStart="5dp"/>
+
+</LinearLayout>

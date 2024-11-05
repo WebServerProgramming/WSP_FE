@@ -131,7 +131,7 @@
                     android:layout_height="wrap_content"
                     android:layout_marginTop="12dp"
                     android:fontFamily="@font/pretendard_medium"
-                    android:text="매일 오전 8시, 미션에 대한\n리마인드 알림을 드릴게요!"
+                    android:text="마감 하루 전 알림을보내드릴께요!"
                     android:textColor="@color/secondary_grey_black_8"
                     android:textSize="14dp" />
             </LinearLayout>
