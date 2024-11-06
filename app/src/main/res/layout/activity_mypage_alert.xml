@@ -4,50 +4,47 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:paddingHorizontal="16dp"
-    tools:context=".mypage.MyPageAlarmActivity"
+    tools:context=".mypage.MyPageAlertActivity"
     android:background="@color/black">
 
-    <LinearLayout
-        android:id="@+id/mypage_alarm_ll_none1"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginVertical="12dp"
+    <Button
+        android:id="@+id/btn_mypage_alert_back"
+        android:layout_width="32dp"
+        android:layout_height="32dp"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="24dp"
+        android:background="@drawable/baseline_arrow_back_24"
+        android:backgroundTint="@color/white"
         app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/tv_mypage_alert_header"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="마이페이지"
+        android:textColor="@color/white"
+        style="@style/pretendard20"
+        app:layout_constraintBottom_toBottomOf="@+id/btn_mypage_alert_back"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toTopOf="parent">
-
-        <ImageButton
-            android:id="@+id/mypage_alarm_btn_back"
-            android:layout_width="20dp"
-            android:layout_height="20dp"
-            android:layout_gravity="center"
-            android:background="@color/secondary_grey_black_14"
-            android:src="@drawable/baseline_chat_24" />
-
-        <TextView
-            android:id="@+id/mypage_alarm_tv_none1"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginLeft="32dp"
-            android:fontFamily="@font/pretendard_semi_bold"
-            android:text="알림설정"
-            android:textColor="@color/secondary_grey_black_3"
-            android:textSize="18dp" />
-    </LinearLayout>
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/btn_mypage_alert_back" />
 
     <TableLayout
         android:id="@+id/mypage_alarm_tl_none1"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="52dp"
+        android:layout_marginTop="80dp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/mypage_alarm_ll_none1">
+        app:layout_constraintTop_toTopOf="parent"
+        android:layout_marginStart="20dp"
+        android:layout_marginEnd="20dp">
 
         <!-- 두 번째 행 -->
         <TableRow
-            android:layout_marginBottom="52dp">
+            android:layout_marginBottom="52dp"
+            >
 
             <LinearLayout
                 android:layout_width="match_parent"
@@ -175,16 +172,17 @@
     <android.widget.Button
         android:id="@+id/mypage_alarm_btn_done"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginBottom="16dp"
-        android:background="@drawable/layout_round_radius8_black10"
-        android:fontFamily="@font/pretendard_semi_bold"
-        android:text="완료"
-        android:textColor="@color/secondary_grey_black_5"
-        android:textSize="18dp"
+        android:layout_height="60dp"
+        android:layout_marginBottom="60dp"
+        android:background="@drawable/layout_round_radius12_gray600"
+        android:text="저장하기"
+        android:textColor="@color/white"
+        style="@style/pretendard20"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent" />
+        app:layout_constraintStart_toStartOf="parent"
+        android:layout_marginStart="20dp"
+        android:layout_marginEnd="20dp"/>
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

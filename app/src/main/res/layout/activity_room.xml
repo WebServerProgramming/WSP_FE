@@ -10,11 +10,10 @@
 
     <Button
         android:id="@+id/btn_room_back"
-        android:layout_width="40dp"
-        android:layout_height="40dp"
-        android:layout_gravity="center"
+        android:layout_width="32dp"
+        android:layout_height="32dp"
         android:layout_marginStart="20dp"
-        android:layout_marginTop="20dp"
+        android:layout_marginTop="24dp"
 
         android:background="@drawable/baseline_arrow_back_24"
         android:backgroundTint="@color/secondary_grey_black_2"
@@ -23,48 +22,56 @@
 
     <Button
         android:id="@+id/btn_room_filter"
-        android:layout_width="40dp"
-        android:layout_height="40dp"
-        android:layout_gravity="center"
-        android:layout_marginEnd="20dp"
+        android:layout_width="32dp"
+        android:layout_height="32dp"
+        android:layout_marginEnd="70dp"
+        android:layout_marginTop="24dp"
 
         android:background="@drawable/baseline_filter_alt_24"
-        android:backgroundTint="@color/secondary_grey_black_2"
-
+        android:backgroundTint="@color/white"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/btn_room_back" />
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <Button
+        android:id="@+id/btn_room_menu"
+        android:layout_width="32dp"
+        android:layout_height="32dp"
+        android:layout_marginEnd="20dp"
+        android:layout_marginTop="24dp"
+
+        android:background="@drawable/ic_menu"
+        android:backgroundTint="@color/white"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
         android:id="@+id/textView"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="10dp"
-        android:layout_marginTop="10dp"
-        android:layout_marginEnd="10dp"
-        android:fontFamily="@font/pretendard_bold"
+        android:layout_height="45dp"
+        android:layout_marginStart="20dp"
+        android:layout_marginEnd="20dp"
+        android:layout_marginTop="70dp"
+        android:background="@drawable/layout_round_radius12_white"
+        android:gravity="center_vertical"
+        style="@style/pretendard24"
         android:text="📣 대공지기능입니다."
-        android:textColor="@color/secondary_grey_black_12"
-        android:textSize="30sp"
-        android:background="@drawable/button_round_black12"
-        android:backgroundTint="@color/secondary_grey_black_4"
+        android:textColor="@color/black"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/btn_room_back" />
+        app:layout_constraintTop_toTopOf="parent" />
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/rv_room"
         android:layout_width="match_parent"
         android:layout_height="0dp"
-        android:layout_marginTop="10dp"
         android:layout_marginBottom="10dp"
-
+        android:layout_marginTop="150dp"
         app:layout_constraintBottom_toTopOf="@+id/iv_room_progress"
 
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView"
+        app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.0" />
 
     <ImageView
@@ -74,181 +81,162 @@
         android:src="@drawable/baseline_keyboard_arrow_up_24"
         app:layout_constraintBottom_toTopOf="@+id/cl_room_progress"
         app:layout_constraintStart_toStartOf="parent"
-        android:backgroundTint="#289Aff"
-        android:background="@drawable/layout_square"
+        android:background="@drawable/layout_round_radius12_blue500_with_outline"
 
         />
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:id="@+id/cl_room_progress"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="170dp"
         android:layout_marginBottom="16dp"
         app:layout_constraintBottom_toTopOf="@+id/cv_room"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        android:background="@drawable/layout_square"
+        android:background="@drawable/layout_round_radius12_blue500_with_outline"
         android:visibility="visible">
 
         <TextView
-            android:id="@+id/textView51"
+            android:id="@+id/textView_notice"
 
-            android:layout_width="85dp"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="16dp"
-            android:layout_marginTop="16dp"
+            android:layout_width="78dp"
+            android:layout_height="30dp"
+            android:layout_marginStart="20dp"
+            android:layout_marginTop="15dp"
             android:background="@drawable/button_round_black12"
-            android:backgroundTint="#FFFFFF"
-            android:fontFamily="@font/pretendard_bold"
-            android:paddingHorizontal="10dp"
+            android:backgroundTint="@color/black"
             android:text="공지"
             android:textAlignment="center"
-            android:textColor="@color/secondary_grey_black_12"
-            android:textSize="18sp"
+            android:textColor="@color/white"
+            style="@style/pretendard20"
 
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
 
         <ProgressBar
-            android:id="@+id/progressBar51"
+            android:id="@+id/progressBar_notice"
             style="@style/Widget.AppCompat.ProgressBar.Horizontal"
-            android:layout_width="0dp"
-            android:layout_marginStart="16dp"
-            android:layout_marginEnd="16dp"
+            android:layout_width="269dp"
             android:layout_height="0dp"
             android:background="@drawable/progress_bar_background"
             android:indeterminate="false"
             android:max="100"
-            android:padding="5dp"
             android:progress="50"
+            android:padding="5dp"
+            android:progressTint="@color/black"
             android:progressDrawable="@drawable/curved_progress_bar"
-
-
-            app:layout_constraintBottom_toBottomOf="@+id/textView51"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.555"
-            app:layout_constraintStart_toEndOf="@+id/textView51"
-            app:layout_constraintTop_toTopOf="@+id/textView51" />
+            app:layout_constraintBottom_toBottomOf="@+id/textView_notice"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/textView_notice"
+            android:layout_marginStart="114dp"/>
 
         <TextView
-            android:id="@+id/textView52"
-            android:layout_width="85dp"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="16dp"
-            android:layout_marginTop="16dp"
+            android:id="@+id/textView_vote"
+            android:layout_width="78dp"
+            android:layout_height="30dp"
+            android:layout_marginStart="20dp"
+            android:layout_marginTop="53dp"
             android:background="@drawable/button_round_black12"
-            android:backgroundTint="#CDD2F0"
-            android:fontFamily="@font/pretendard_bold"
-            android:paddingHorizontal="10dp"
+            android:backgroundTint="@color/progress_1"
             android:text="투표"
             android:textAlignment="center"
-            android:textColor="@color/secondary_grey_black_12"
-            android:textSize="18sp"
+            android:textColor="@color/white"
+            style="@style/pretendard20"
+
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/textView51" />
+            app:layout_constraintTop_toTopOf="parent" />
 
         <ProgressBar
-            android:id="@+id/progressBar52"
+            android:id="@+id/progressBar_vote"
             style="@style/Widget.AppCompat.ProgressBar.Horizontal"
-            android:layout_width="0dp"
-            android:layout_marginStart="16dp"
-            android:layout_marginEnd="16dp"
+            android:layout_width="269dp"
             android:layout_height="0dp"
             android:background="@drawable/progress_bar_background"
             android:indeterminate="false"
             android:max="100"
+            android:progress="60"
             android:padding="5dp"
-            android:progress="75"
+            android:progressTint="@color/progress_1"
             android:progressDrawable="@drawable/curved_progress_bar"
-            android:progressTint="#CDD2F0"
-            app:layout_constraintBottom_toBottomOf="@+id/textView52"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.555"
-            app:layout_constraintStart_toEndOf="@+id/textView52"
-            app:layout_constraintTop_toTopOf="@+id/textView52" />
-
+            app:layout_constraintBottom_toBottomOf="@+id/textView_vote"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/textView_vote"
+            android:layout_marginStart="114dp"/>
         <TextView
-            android:id="@+id/textView53"
-            android:layout_width="85dp"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="16dp"
-            android:layout_marginTop="16dp"
+            android:id="@+id/textView_event"
+
+            android:layout_width="78dp"
+            android:layout_height="30dp"
+            android:layout_marginStart="20dp"
+            android:layout_marginTop="91dp"
             android:background="@drawable/button_round_black12"
-            android:backgroundTint="#FDCBB2"
-            android:fontFamily="@font/pretendard_bold"
-            android:paddingHorizontal="10dp"
+            android:backgroundTint="@color/progress_2"
             android:text="행사"
             android:textAlignment="center"
-            android:textColor="@color/secondary_grey_black_12"
-            android:textSize="18sp"
+            android:textColor="@color/white"
+            style="@style/pretendard20"
+
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/textView52" />
+            app:layout_constraintTop_toTopOf="parent" />
 
         <ProgressBar
-            android:id="@+id/progressBar53"
+            android:id="@+id/progressBar_event"
             style="@style/Widget.AppCompat.ProgressBar.Horizontal"
-            android:layout_width="0dp"
-            android:layout_marginStart="16dp"
-            android:layout_marginEnd="16dp"
+            android:layout_width="269dp"
             android:layout_height="0dp"
             android:background="@drawable/progress_bar_background"
             android:indeterminate="false"
             android:max="100"
+            android:progress="20"
             android:padding="5dp"
-            android:progress="10"
+            android:progressTint="@color/progress_2"
             android:progressDrawable="@drawable/curved_progress_bar"
-            android:progressTint="#FDCBB2"
-            app:layout_constraintBottom_toBottomOf="@+id/textView53"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.555"
-            app:layout_constraintStart_toEndOf="@+id/textView53"
-            app:layout_constraintTop_toTopOf="@+id/textView53" />
-
+            app:layout_constraintBottom_toBottomOf="@+id/textView_event"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/textView_event"
+            android:layout_marginStart="114dp"/>
         <TextView
-            android:id="@+id/textView54"
-            android:layout_width="85dp"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="16dp"
-            android:layout_marginTop="16dp"
+            android:id="@+id/textView_period"
+
+            android:layout_width="78dp"
+            android:layout_height="30dp"
+            android:layout_marginStart="20dp"
+            android:layout_marginTop="129dp"
+            android:layout_marginBottom="15dp"
             android:background="@drawable/button_round_black12"
-            android:backgroundTint="#B7E6DF"
-            android:fontFamily="@font/pretendard_bold"
-            android:paddingHorizontal="10dp"
+            android:backgroundTint="@color/progress_3"
             android:text="정기행사"
             android:textAlignment="center"
-            android:textColor="@color/secondary_grey_black_12"
-            android:textSize="18sp"
-            android:layout_marginBottom="16dp"
-            app:layout_constraintBottom_toBottomOf="parent"
+            android:textColor="@color/white"
+            style="@style/pretendard20"
+
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/textView53" />
+            app:layout_constraintTop_toTopOf="parent" />
 
         <ProgressBar
-            android:id="@+id/progressBar54"
+            android:id="@+id/progressBar_period"
             style="@style/Widget.AppCompat.ProgressBar.Horizontal"
-            android:layout_width="0dp"
-            android:layout_marginStart="16dp"
-            android:layout_marginEnd="16dp"
+            android:layout_width="269dp"
             android:layout_height="0dp"
             android:background="@drawable/progress_bar_background"
             android:indeterminate="false"
             android:max="100"
-            android:padding="5dp"
             android:progress="100"
+            android:padding="5dp"
+            android:progressTint="@color/progress_3"
             android:progressDrawable="@drawable/curved_progress_bar"
-            android:progressTint="#B7E6DF"
-            app:layout_constraintBottom_toBottomOf="@+id/textView54"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.555"
-            app:layout_constraintStart_toEndOf="@+id/textView54"
-            app:layout_constraintTop_toTopOf="@+id/textView54" />
+            app:layout_constraintBottom_toBottomOf="@+id/textView_period"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/textView_period"
+            android:layout_marginStart="114dp"/>
+
     </androidx.constraintlayout.widget.ConstraintLayout>
 
     <com.prolificinteractive.materialcalendarview.MaterialCalendarView
         android:id="@+id/cv_room"
-        android:layout_width="300dp"
-        android:layout_height="wrap_content"
+        android:layout_width="wrap_content"
+        android:layout_height="256dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
 
@@ -256,8 +244,9 @@
         app:mcv_arrowColor="@color/white"
         app:mcv_dateTextAppearance="@style/Calendar"
         app:mcv_headerTextAppearance="@style/Calendar"
-        app:mcv_selectionColor="@color/main_white_200"
+        app:mcv_selectionColor="@color/white"
         app:mcv_showOtherDates="defaults"
-        app:mcv_weekDayTextAppearance="@style/Calendar" />
+        app:mcv_weekDayTextAppearance="@style/Calendar"
+        android:layout_marginBottom="28dp"/>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

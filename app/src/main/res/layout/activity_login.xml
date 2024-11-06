@@ -9,16 +9,36 @@
     android:background="@color/black">
 
     <ImageView
+        android:id="@+id/iv_login_kor"
         android:layout_width="360dp"
         android:layout_height="wrap_content"
         android:layout_marginTop="240dp"
         android:fontFamily="@font/pretendard_bold"
-        android:src="@drawable/chaewoomi_logo"
+        android:src="@drawable/ic_login_logo_korean"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
+
     <ImageView
-        android:id="@+id/iv_login"
+        android:id="@+id/iv_login_eng"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/ic_login_logo_english"
+        app:layout_constraintEnd_toEndOf="@+id/iv_login_kor"
+        app:layout_constraintStart_toStartOf="@+id/iv_login_kor"
+        app:layout_constraintTop_toBottomOf="@+id/iv_login_kor" />
+
+    <ImageView
+        android:id="@+id/iv_login_logo_img"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/ic_login_logo"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/iv_login_eng" />
+
+    <ImageView
+        android:id="@+id/iv_login_kakao"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginBottom="80dp"

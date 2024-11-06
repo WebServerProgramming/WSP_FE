@@ -1,15 +1,9 @@
 package com.example.front.main;
 
-import android.graphics.Color;
-import android.graphics.drawable.ColorDrawable;
-import android.graphics.drawable.Drawable;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.Button;
-import android.widget.EditText;
-import android.widget.TextView;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
@@ -22,13 +16,11 @@ import com.prolificinteractive.materialcalendarview.CalendarDay;
 import com.prolificinteractive.materialcalendarview.MaterialCalendarView;
 
 import java.util.ArrayList;
-import java.util.Date;
 import java.util.HashMap;
-import java.util.HashSet;
 import java.util.List;
 import java.util.Map;
 
-public class FragCalendar extends Fragment {
+public class FragSchedule extends Fragment {
     private MaterialCalendarView calendarView;
     private ArrayList<CalendarDay> calendarDayList = new ArrayList<>(); // month: month - 1
 
@@ -46,7 +38,7 @@ public class FragCalendar extends Fragment {
     @Nullable
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
-        view = inflater.inflate(R.layout.fragment_main2, container, false);
+        view = inflater.inflate(R.layout.fragment_main_schedule, container, false);
 
         recyclerView = view.findViewById(R.id.rv_calendar);
         linearLayoutManager = new LinearLayoutManager(getActivity());

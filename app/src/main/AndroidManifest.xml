@@ -15,6 +15,27 @@
         android:theme="@style/Theme.WSP_FE"
         tools:targetApi="31">
         <activity
+            android:name=".room.challenge.ChallengeCertificationActivity"
+            android:exported="false" />
+        <activity
+            android:name=".room.challenge.ChallengeActivity"
+            android:exported="false" />
+        <activity
+            android:name=".room.challenge.ChallengeListActivity"
+            android:exported="false" />
+        <activity
+            android:name=".room.RoomReviewActivity"
+            android:exported="false" />
+        <activity
+            android:name=".club.ClubStarActivity"
+            android:exported="false" />
+        <activity
+            android:name=".main.MainScheduleDetailActivity"
+            android:exported="false" />
+        <activity
+            android:name=".login.LoginSelectionActivity"
+            android:exported="false" />
+        <activity
             android:name=".room.VoteActivity"
             android:exported="false" />
         <activity

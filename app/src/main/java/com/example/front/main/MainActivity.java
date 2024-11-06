@@ -1,9 +1,7 @@
 package com.example.front.main;
 
 import android.content.Intent;
-import android.net.Uri;
 import android.os.Bundle;
-import android.util.Log;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.ImageButton;
@@ -28,7 +26,7 @@ public class MainActivity extends AppCompatActivity {
     private FragmentManager fm;
     private FragmentTransaction ft;
     private FragRoom fragRoom;
-    private FragCalendar fragCalendar;
+    private FragSchedule fragSchedule;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -63,7 +61,7 @@ public class MainActivity extends AppCompatActivity {
 
         // init fragment
         fragRoom = new FragRoom();
-        fragCalendar = new FragCalendar();
+        fragSchedule = new FragSchedule();
 
         setFrag(0);
     }
@@ -77,7 +75,7 @@ public class MainActivity extends AppCompatActivity {
                 ft.commit();
                 break;
             case 1:
-                ft.replace(R.id.frame_main, fragCalendar);
+                ft.replace(R.id.frame_main, fragSchedule);
                 ft.commit();
                 break;
         }

@@ -3,8 +3,6 @@ package com.example.front.main;
 import static com.example.front.R.*;
 
 import android.content.Intent;
-import android.graphics.drawable.Drawable;
-import android.net.Uri;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -34,7 +32,7 @@ public class FragRoom extends Fragment {
     @Nullable
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
-        view = inflater.inflate(R.layout.fragment_main1, container, false);
+        view = inflater.inflate(R.layout.fragment_main_club, container, false);
 
         recyclerView = view.findViewById(R.id.rv_main1);
         linearLayoutManager = new LinearLayoutManager(getActivity());

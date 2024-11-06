@@ -8,29 +8,15 @@
     tools:context=".room.VoteActivity"
     android:background="@color/black">
 
-    <TextView
-        android:id="@+id/textView3"
-        android:layout_width="360dp"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="20dp"
-        android:layout_marginTop="20dp"
-        android:fontFamily="@font/pretendard_bold"
-        android:text="투표내용"
-        android:textColor="@color/secondary_grey_black_2"
-        android:textSize="24dp"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView2" />
-
     <Button
         android:id="@+id/btn_notice_back"
-        android:layout_width="40dp"
-        android:layout_height="40dp"
-        android:layout_gravity="center"
+        android:layout_width="32dp"
+        android:layout_height="32dp"
         android:layout_marginStart="20dp"
-        android:layout_marginTop="20dp"
+        android:layout_marginTop="24dp"
 
         android:background="@drawable/baseline_arrow_back_24"
-        android:backgroundTint="@color/secondary_grey_black_2"
+        android:backgroundTint="@color/white"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
@@ -39,36 +25,81 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="80dp"
-        android:fontFamily="@font/pretendard_bold"
-        android:text="투표제목"
-        android:textColor="@color/secondary_grey_black_2"
-        android:textSize="40dp"
+        android:text="테스트용 투표"
+        android:textColor="@color/white"
+        style="@style/pretendard32"
         app:layout_constraintStart_toStartOf="@+id/btn_notice_back"
         app:layout_constraintTop_toTopOf="parent" />
 
-    <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/rv_vote"
-        android:layout_width="0dp"
-        android:layout_height="400dp"
-        android:layout_marginStart="20dp"
-        android:layout_marginTop="40dp"
-        android:layout_marginEnd="20dp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView3"
-        android:background="@drawable/layout_round_radius12_black12"/>
-
-    <Button
-        android:id="@+id/button2"
+    <TextView
+        android:id="@+id/textView3"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:background="@drawable/button_enabled"
-        android:text="투표하기"
-        android:textColor="@color/secondary_grey_black_10"
-        style="@style/WhiteText24"
-        android:enabled="false"
-        app:layout_constraintEnd_toEndOf="@+id/rv_vote"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="@+id/rv_vote"
-        app:layout_constraintTop_toBottomOf="@+id/rv_vote" />
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="160dp"
+        android:layout_marginEnd="20dp"
+        android:text="테스트용 투표내용"
+        android:textColor="@color/white"
+        style="@style/pretendard20"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/textView4"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="190dp"
+        android:layout_marginEnd="20dp"
+        android:text="2024년 1월 1일 오후 00:00 종료"
+        android:textColor="@color/white"
+        style="@style/pretendard12"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="230dp"
+        android:layout_marginEnd="20dp"
+        android:background="@drawable/layout_round_radius12_gray600"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/rv_vote"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_marginStart="10dp"
+            android:layout_marginTop="15dp"
+            android:layout_marginEnd="10dp"
+            android:layout_marginBottom="20dp"
+            android:background="@drawable/layout_round_radius12_gray600"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toTopOf="@id/button2"/>
+
+        <Button
+            android:id="@+id/button2"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:background="@drawable/layout_round_radius12_blue500"
+            android:text="투표하기"
+            android:textColor="@color/white"
+            style="@style/WhiteText24"
+            android:enabled="false"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+
+
 </androidx.constraintlayout.widget.ConstraintLayout>
