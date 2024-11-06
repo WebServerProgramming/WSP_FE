@@ -43,16 +43,16 @@ public class RoomAdapter extends RecyclerView.Adapter<RoomAdapter.CustomViewHold
         int backgroundColor = Color.parseColor("#CCCCCC");
         switch (category) {
             case "공지":
-                backgroundColor = Color.parseColor("#FFFFFF");
+                backgroundColor = Color.parseColor("#000000");
                 break;
             case "투표":
-                backgroundColor = Color.parseColor("#CDD2F0");
+                backgroundColor = Color.parseColor("#3C55EE");
                 break;
             case "행사":
-                backgroundColor = Color.parseColor("#FDCBB2");
+                backgroundColor = Color.parseColor("#FF7E3E");
                 break;
             case "정기행사":
-                backgroundColor = Color.parseColor("#B7E6DF");
+                backgroundColor = Color.parseColor("#30E3C8");
                 break;
         }
         // ColorStateList 생성
@@ -67,7 +67,7 @@ public class RoomAdapter extends RecyclerView.Adapter<RoomAdapter.CustomViewHold
         holder.itemView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(view.getContext(), VoteActivity.class);
+                Intent intent = new Intent(view.getContext(), NoticeActivity.class);
                 view.getContext().startActivity(intent);
                 //String curName = holder.tvClub.getText().toString();
                 //Toast.makeText(view.getContext(), curName, Toast.LENGTH_SHORT).show();

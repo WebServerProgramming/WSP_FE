@@ -16,6 +16,7 @@ import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.front.R;
+import com.example.front.mypage.MyPageActivity;
 
 import java.util.ArrayList;
 
@@ -34,7 +35,7 @@ public class FragRoom extends Fragment {
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         view = inflater.inflate(R.layout.fragment_main_club, container, false);
 
-        recyclerView = view.findViewById(R.id.rv_main1);
+        recyclerView = view.findViewById(R.id.rv_main_club);
         linearLayoutManager = new LinearLayoutManager(getActivity());
         recyclerView.setLayoutManager(linearLayoutManager);
 
@@ -43,17 +44,16 @@ public class FragRoom extends Fragment {
         recyclerView.setAdapter(main1Adapter);
 
 
-        Button btnMain1Add = view.findViewById(R.id.btn_main1_add);
 
         Main1Data main1Data = new Main1Data(drawable.basketball,"예시");
         arrayList.add(main1Data);
         main1Adapter.notifyDataSetChanged();
 
-
-        btnMain1Add.setOnClickListener(new View.OnClickListener() {
+        Button btn = view.findViewById(R.id.btn_main_club_create);
+        btn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(getContext(), RoomListActivity.class);
+                Intent intent = new Intent(getActivity(), RoomListActivity.class);
                 startActivity(intent);
             }
         });

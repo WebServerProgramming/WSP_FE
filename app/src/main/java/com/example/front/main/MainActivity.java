@@ -71,11 +71,11 @@ public class MainActivity extends AppCompatActivity {
         ft = fm.beginTransaction();
         switch (n) {
             case 0:
-                ft.replace(R.id.frame_main, fragRoom);
+                ft.replace(R.id.fl_main, fragRoom);
                 ft.commit();
                 break;
             case 1:
-                ft.replace(R.id.frame_main, fragSchedule);
+                ft.replace(R.id.fl_main, fragSchedule);
                 ft.commit();
                 break;
         }

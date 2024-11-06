@@ -50,4 +50,13 @@ dependencies {
     // calendar
     implementation 'com.prolificinteractive:material-calendarview:1.2.0'
     //implementation "com.github.prolificinteractive:material-calendarview:${version}"
+
+    // chrome CustomTabIntent
+    implementation 'androidx.browser:browser:1.4.0'
+
+    // 카카오 SDK 모듈 - 카카오 로그인
+    implementation "com.kakao.sdk:v2-user:2.8.3"
+
+    // 카카오 SDK 모듈 - 카카오 링크
+    implementation "com.kakao.sdk:v2-all-rx:2.13.0"
 }

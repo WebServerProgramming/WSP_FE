@@ -16,6 +16,7 @@ import com.prolificinteractive.materialcalendarview.CalendarDay;
 import com.prolificinteractive.materialcalendarview.MaterialCalendarView;
 
 import java.util.ArrayList;
+import java.util.Calendar;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
@@ -40,7 +41,7 @@ public class FragSchedule extends Fragment {
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         view = inflater.inflate(R.layout.fragment_main_schedule, container, false);
 
-        recyclerView = view.findViewById(R.id.rv_calendar);
+        recyclerView = view.findViewById(R.id.rv_main_schedule);
         linearLayoutManager = new LinearLayoutManager(getActivity());
         recyclerView.setLayoutManager(linearLayoutManager);
 
@@ -49,7 +50,10 @@ public class FragSchedule extends Fragment {
         recyclerView.setAdapter(main2Adapter);
 
 
-        calendarView = view.findViewById(R.id.cv_calendar);
+        calendarView = view.findViewById(R.id.cv_main_schedule);
+
+        Calendar currentDate = Calendar.getInstance();
+        calendarView.setSelectedDate(currentDate.getTime());
 
         calendarView.setOnDateChangedListener((widget, date, selected) -> {
             if (selected) {
@@ -65,14 +69,14 @@ public class FragSchedule extends Fragment {
             }
         });
 
-        Main2Data main2Data = new Main2Data(R.drawable.basketball,"투표 종료일: 행사 참가자", CalendarDay.from(2024,9,5));
+        Main2Data main2Data = new Main2Data(R.drawable.basketball,"투표 종료일: 행사 참가자", CalendarDay.from(2024,10,5));
         addData(main2Data.getCalendarDay(), main2Data);
-        main2Data = new Main2Data(R.drawable.tennis,"투표 시작일: 동아리 회식 인원 투표", CalendarDay.from(2024,9,5));
+        main2Data = new Main2Data(R.drawable.tennis,"투표 시작일: 동아리 회식 인원 투표", CalendarDay.from(2024,10,5));
         addData(main2Data.getCalendarDay(), main2Data);
 
-        calendarDayList.add(CalendarDay.from(2024,9,5));
-        calendarDayList.add(CalendarDay.from(2024,9,13));
-        calendarDayList.add(CalendarDay.from(2024,9,15));
+        calendarDayList.add(CalendarDay.from(2024,10,5));
+        calendarDayList.add(CalendarDay.from(2024,10,13));
+        calendarDayList.add(CalendarDay.from(2024,10,15));
 
         Decorator decorator = new Decorator(calendarDayList, getActivity());
         calendarView.addDecorator(decorator);

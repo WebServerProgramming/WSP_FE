@@ -1,5 +1,6 @@
 package com.example.front.room;
 
+import android.content.Intent;
 import android.media.Image;
 import android.os.Bundle;
 import android.view.View;
@@ -17,9 +18,13 @@ import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.front.R;
+import com.example.front.login.LoginSelectionActivity;
 import com.example.front.main.Main2Adapter;
 import com.example.front.main.Main2Data;
 import com.example.front.main.Main3Data;
+import com.example.front.main.MainActivity;
+import com.example.front.room.challenge.ChallengeActivity;
+import com.example.front.room.challenge.ChallengeListActivity;
 
 import java.util.ArrayList;
 
@@ -62,8 +67,33 @@ public class RoomActivity extends AppCompatActivity {
         ivRoomProgress.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                ivRoomProgress.setImageResource(R.drawable.baseline_keyboard_arrow_up_24);
-                clRoomProgress.setVisibility(View.GONE);
+                if (clRoomProgress.getVisibility() == View.GONE) {
+                    ivRoomProgress.setImageResource(R.drawable.baseline_keyboard_arrow_down_24);
+                    clRoomProgress.setVisibility(View.VISIBLE);
+                }
+                else  {
+                    ivRoomProgress.setImageResource(R.drawable.baseline_keyboard_arrow_up_24);
+                    clRoomProgress.setVisibility(View.GONE);
+                }
+
+            }
+        });
+
+        Button btnFilter = findViewById(R.id.btn_room_filter);
+        btnFilter.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(RoomActivity.this, RoomReviewActivity.class);
+                startActivity(intent);
+            }
+        });
+
+        Button btnMenu = findViewById(R.id.btn_room_menu);
+        btnMenu.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(RoomActivity.this, ChallengeListActivity.class);
+                startActivity(intent);
             }
         });
     }

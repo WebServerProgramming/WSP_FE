@@ -1,5 +1,6 @@
 package com.example.front.main;
 
+import android.content.Intent;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -11,6 +12,9 @@ import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.front.R;
+import com.example.front.club.ClubRegistrationActivity;
+import com.example.front.club.ClubStarActivity;
+import com.example.front.login.LoginSelectionActivity;
 
 import java.util.ArrayList;
 
@@ -36,22 +40,23 @@ public class Main3Adapter extends RecyclerView.Adapter<Main3Adapter.CustomViewHo
         holder.ivRoomListClub.setImageResource(arrayList.get(position).getIvRoomListClub());
         holder.tvRoomListName.setText(arrayList.get(position).getTvRoomListName());
         holder.tvRoomListIntroduction.setText(arrayList.get(position).getTvRoomListIntroduction());
+        holder.tvRoomListStar.setText(arrayList.get(position).getTvRoomListStar());
 
         holder.itemView.setTag(position);
         holder.itemView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                //Intent intent = new Intent(view.getContext(), RoomActivity.class);
-                ///view.getContext().startActivity(intent);
+                Intent intent = new Intent(view.getContext(), ClubStarActivity.class);
+                view.getContext().startActivity(intent);
                 //String curName = holder.tvClub.getText().toString();
                 //Toast.makeText(view.getContext(), curName, Toast.LENGTH_SHORT).show();
             }
         });
-
-        holder.btnRoomListAdd.setOnClickListener(new View.OnClickListener() {
+        holder.tvRoomListStar.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-
+                Intent intent = new Intent(view.getContext(), ClubStarActivity.class);
+                view.getContext().startActivity(intent);
             }
         });
 
@@ -77,6 +82,7 @@ public class Main3Adapter extends RecyclerView.Adapter<Main3Adapter.CustomViewHo
         protected TextView tvRoomListName;
         protected TextView tvRoomListIntroduction;
         protected Button btnRoomListAdd;
+        protected TextView tvRoomListStar;
 
 
         public CustomViewHolder(@NonNull View itemView) {
@@ -85,6 +91,7 @@ public class Main3Adapter extends RecyclerView.Adapter<Main3Adapter.CustomViewHo
             this.tvRoomListName = (TextView) itemView.findViewById(R.id.tv_room_list_name);
             this.tvRoomListIntroduction = (TextView) itemView.findViewById(R.id.tv_room_list_introduction);
             this.btnRoomListAdd = (Button) itemView.findViewById(R.id.btn_room_list_add);
+            this.tvRoomListStar = (TextView) itemView.findViewById(R.id.tv_room_list_star);
         }
     }
 }

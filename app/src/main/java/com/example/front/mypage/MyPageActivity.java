@@ -1,6 +1,9 @@
 package com.example.front.mypage;
 
+import android.content.Intent;
 import android.os.Bundle;
+import android.view.View;
+import android.widget.Button;
 
 import androidx.activity.EdgeToEdge;
 import androidx.appcompat.app.AppCompatActivity;
@@ -19,5 +22,14 @@ public class MyPageActivity extends AppCompatActivity {
             v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom);
             return insets;
         });*/
+        Button btn = findViewById(R.id.mypage_btn_setting_alarms);
+        btn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(MyPageActivity.this, MyPageAlertActivity.class);
+                startActivity(intent);
+            }
+        });
     }
+
 }

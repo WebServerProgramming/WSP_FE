@@ -5,11 +5,13 @@ public class Main3Data {
     private int ivRoomListClub;
     private String tvRoomListName;
     private String tvRoomListIntroduction;
+    private String tvRoomListStar;
 
-    public Main3Data(int ivRoomListClub, String tvRoomListName, String tvRoomListIntroduction) {
+    public Main3Data(int ivRoomListClub, String tvRoomListName, String tvRoomListIntroduction, String tvRoomListStar) {
         this.ivRoomListClub = ivRoomListClub;
         this.tvRoomListName = tvRoomListName;
         this.tvRoomListIntroduction = tvRoomListIntroduction;
+        this.tvRoomListStar = tvRoomListStar;
     }
 
     public int getIvRoomListClub() {
@@ -20,14 +22,6 @@ public class Main3Data {
         this.ivRoomListClub = ivRoomListClub;
     }
 
-    public String getTvRoomListName() {
-        return tvRoomListName;
-    }
-
-    public void setTvRoomListName(String tvRoomListName) {
-        this.tvRoomListName = tvRoomListName;
-    }
-
     public String getTvRoomListIntroduction() {
         return tvRoomListIntroduction;
     }
@@ -36,4 +30,19 @@ public class Main3Data {
         this.tvRoomListIntroduction = tvRoomListIntroduction;
     }
 
+    public String getTvRoomListName() {
+        return tvRoomListName;
+    }
+
+    public void setTvRoomListName(String tvRoomListName) {
+        this.tvRoomListName = tvRoomListName;
+    }
+
+    public String getTvRoomListStar() {
+        return tvRoomListStar;
+    }
+
+    public void setTvRoomListStar(String tvRoomListStar) {
+        this.tvRoomListStar = tvRoomListStar;
+    }
 }

@@ -15,6 +15,9 @@
         android:theme="@style/Theme.WSP_FE"
         tools:targetApi="31">
         <activity
+            android:name=".club.ClubRegistrationActivity"
+            android:exported="false" />
+        <activity
             android:name=".room.challenge.ChallengeCertificationActivity"
             android:exported="false" />
         <activity
@@ -48,7 +51,7 @@
             android:name=".main.RoomListActivity"
             android:exported="false" />
         <activity
-            android:name=".room.RoomActivity"
+            android:name=".mypage.MyPageAlertActivity"
             android:exported="false" />
         <activity
             android:name=".main.RoomCreateActivity"
@@ -58,14 +61,35 @@
             android:exported="false" />
         <activity
             android:name=".login.LoginActivity"
-            android:exported="false" />
-        <activity
-            android:name=".main.MainActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
-
                 <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+            <intent-filter android:label="OAuth Callback">
+                <action android:name="android.intent.action.VIEW" />
+                <category android:name="android.intent.category.DEFAULT" />
+                <category android:name="android.intent.category.BROWSABLE" />
+                <data android:scheme="chawoomi" android:host="link" android:pathPrefix="/oauth2/callback/token" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".main.MainActivity"
+            android:exported="false">
+        </activity>
+        <activity
+            android:name="com.kakao.sdk.auth.AuthCodeHandlerActivity"
+            android:exported="true">
+            <intent-filter>
+                <action android:name="android.intent.action.VIEW" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+                <category android:name="android.intent.category.BROWSABLE" />
+
+                <!-- Redirect URI: "kakao${NATIVE_APP_KEY}://oauth" -->
+                <data
+                    android:host="oauth"
+                    android:scheme="kakaoc7af740247a982be78279e439c6125ec" />
             </intent-filter>
         </activity>
     </application>

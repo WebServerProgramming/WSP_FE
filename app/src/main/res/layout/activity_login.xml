@@ -12,7 +12,7 @@
         android:id="@+id/iv_login_kor"
         android:layout_width="360dp"
         android:layout_height="wrap_content"
-        android:layout_marginTop="240dp"
+        android:layout_marginTop="150dp"
         android:fontFamily="@font/pretendard_bold"
         android:src="@drawable/ic_login_logo_korean"
         app:layout_constraintEnd_toEndOf="parent"
@@ -45,7 +45,7 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        tools:srcCompat="@drawable/kakao_login_medium_wide" />
+        android:src="@drawable/kakao_login_medium_wide" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

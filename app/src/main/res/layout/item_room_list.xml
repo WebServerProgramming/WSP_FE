@@ -15,8 +15,7 @@
 
         <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:padding="5dp">
+            android:layout_height="wrap_content">
 
             <de.hdodenhof.circleimageview.CircleImageView
                 android:id="@+id/iv_room_list_club"
@@ -25,7 +24,8 @@
                 android:layout_marginStart="10dp"
                 android:src="@mipmap/ic_launcher"
                 app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintStart_toStartOf="parent" />
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
 
             <TextView
                 android:id="@+id/tv_room_list_name"
@@ -33,6 +33,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginStart="8dp"
                 android:layout_weight="1"
+                android:layout_marginTop="6dp"
                 android:fontFamily="@font/pretendard_bold"
                 android:text="방이름"
                 android:textColor="@color/secondary_grey_black_2"
@@ -48,12 +49,23 @@
                 android:layout_weight="1"
                 android:fontFamily="@font/pretendard_semi_bold"
                 android:text="방설명"
-
-
                 android:textColor="@color/secondary_grey_black_2"
-                android:textSize="18sp"
+                android:textSize="16sp"
                 app:layout_constraintStart_toStartOf="@+id/tv_room_list_name"
                 app:layout_constraintTop_toBottomOf="@+id/tv_room_list_name" />
+
+            <TextView
+                android:id="@+id/tv_room_list_star"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="6dp"
+                android:layout_weight="1"
+                android:fontFamily="@font/pretendard_semi_bold"
+                android:text="별점"
+                android:textColor="@color/secondary_grey_black_2"
+                android:textSize="16sp"
+                app:layout_constraintStart_toStartOf="@+id/tv_room_list_introduction"
+                app:layout_constraintTop_toBottomOf="@+id/tv_room_list_introduction" />
 
             <Button
                 android:id="@+id/btn_room_list_add"
