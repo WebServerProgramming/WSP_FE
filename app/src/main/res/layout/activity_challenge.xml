@@ -9,25 +9,23 @@
     tools:context=".room.challenge.ChallengeActivity">
 
     <Button
-        android:id="@+id/btn_notice_back"
+        android:id="@+id/btn_challenege_back"
         android:layout_width="32dp"
         android:layout_height="32dp"
         android:layout_gravity="center"
         android:layout_marginStart="20dp"
         android:layout_marginTop="24dp"
-
         android:background="@drawable/baseline_arrow_back_24"
-        android:backgroundTint="@color/secondary_grey_black_2"
+        android:backgroundTint="@color/white"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
-        android:id="@+id/textView2"
+        android:id="@+id/tv_challenge"
         style="@style/pretendard32"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="20dp"
-
         android:layout_marginTop="80dp"
         android:text="챌린지"
         android:textColor="@color/white"
@@ -35,7 +33,7 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
-        android:id="@+id/rbcu0v3usw47"
+        android:id="@+id/tv_challege_title"
         style="@style/pretendard20"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -47,19 +45,7 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
-        android:id="@+id/rbcu0v3uswk7"
-        style="@style/pretendard20"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="20dp"
-        android:layout_marginTop="140dp"
-        android:text="챌린지: 매일매일 스터디"
-        android:textColor="@color/white"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-
-    <TextView
-        android:id="@+id/rbcu0v3uswkaaa7"
+        android:id="@+id/tv_challege_content"
         style="@style/pretendard16"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -85,12 +71,12 @@
         app:layout_constraintTop_toTopOf="parent">
 
         <TextView
-            android:id="@+id/ry19rkm95xsi"
+            android:id="@+id/tv_challenge_account"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="벌금 계좌: 456-123456-123 농협"
             style="@style/pretendard20"
-            android:textColor="@color/white"/>
+            android:textColor="@color/white" />
 
         <View
             android:layout_width="0dp"
@@ -98,51 +84,54 @@
             android:layout_weight="1" />
 
         <ImageView
-            android:id="@+id/ru87bn8dvd0h"
+            android:id="@+id/iv_challenge_copy"
             android:layout_width="24dp"
             android:layout_height="24dp"
             android:src="@drawable/ic_copy" />
+
     </LinearLayout>
 
-    <Button
-        android:id="@+id/btn_challenge_click"
+    <ImageView
+        android:id="@+id/iv_challenge_user"
         android:layout_width="24dp"
         android:layout_height="24dp"
         android:background="@drawable/ic_user"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         android:layout_marginStart="20dp"
-        android:layout_marginTop    ="320dp"
+        android:layout_marginTop="320dp"
         />
 
     <TextView
-        android:id="@+id/textView6"
+        android:id="@+id/tv_challenge_user"
         style="@style/pretendard16"
         android:layout_width="0dp"
         android:layout_height="0dp"
         android:layout_marginStart="10dp"
         android:text="인증합니다!"
         android:textColor="@color/white"
-        app:layout_constraintBottom_toBottomOf="@id/btn_challenge_click"
+        app:layout_constraintBottom_toBottomOf="@id/iv_challenge_user"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@id/btn_challenge_click"
-        app:layout_constraintTop_toTopOf="@id/btn_challenge_click" />
+        app:layout_constraintStart_toEndOf="@id/iv_challenge_user"
+        app:layout_constraintTop_toTopOf="@id/iv_challenge_user" />
 
     <ImageView
+        android:id="@+id/iv_challenge_user_content"
         android:layout_width="300dp"
         android:layout_height="150dp"
         android:src="@drawable/ic_temp_challenge"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView6"
+        app:layout_constraintTop_toBottomOf="@+id/tv_challenge_user"
         android:layout_marginTop="10dp"/>
 
     <Button
-        android:id="@+id/mypage_alarm_btn_done"
+        android:id="@+id/btn_challenge_done"
         android:layout_width="match_parent"
         android:layout_height="60dp"
         android:layout_marginBottom="60dp"
-        android:background="@drawable/layout_round_radius12_blue500"
+        android:background="@drawable/layout_round_radius12_default"
+        android:backgroundTint="@color/main_blue_500"
         android:text="인증하러 가기"
         android:textColor="@color/white"
         style="@style/pretendard20"

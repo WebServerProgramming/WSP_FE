@@ -9,7 +9,7 @@
     android:background="@color/black">
 
     <Button
-        android:id="@+id/btn_room_list_back"
+        android:id="@+id/btn_club_list_back"
         android:layout_width="32dp"
         android:layout_height="32dp"
         android:layout_marginStart="20dp"
@@ -20,7 +20,7 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
-        android:id="@+id/tv_room_list"
+        android:id="@+id/tv_club_list"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_gravity="center"
@@ -34,8 +34,8 @@
         android:layout_marginStart="20dp"
         android:layout_marginEnd="20dp"/>
 
-    <Button
-        android:id="@+id/btn_main1_search"
+    <ImageView
+        android:id="@+id/iv_club_list_search"
         android:layout_width="32dp"
         android:layout_height="32dp"
         android:background="@drawable/baseline_search_24"
@@ -46,7 +46,7 @@
         android:layout_marginStart="20dp"/>
 
     <EditText
-        android:id="@+id/editText2"
+        android:id="@+id/et_club_list_search"
         style="@style/pretendard20"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
@@ -55,13 +55,13 @@
         android:hint="검색할 동아리 입력"
         android:textColor="@color/white"
         android:textColorHint="@color/main_gray_600"
-        app:layout_constraintBottom_toBottomOf="@+id/btn_main1_search"
+        app:layout_constraintBottom_toBottomOf="@+id/iv_club_list_search"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/btn_main1_search"
-        app:layout_constraintTop_toTopOf="@+id/btn_main1_search" />
+        app:layout_constraintStart_toEndOf="@+id/iv_club_list_search"
+        app:layout_constraintTop_toTopOf="@+id/iv_club_list_search" />
 
     <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/rv_room_list"
+        android:id="@+id/rv_club_list"
         android:layout_width="match_parent"
         android:layout_height="0dp"
         android:layout_marginStart="20dp"
@@ -69,13 +69,11 @@
         android:layout_marginEnd="20dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/editText2"
-        app:layout_constraintVertical_bias="0.0" />
+        app:layout_constraintTop_toBottomOf="@+id/et_club_list_search" />
 
     <Button
-        android:id="@+id/mypage_alarm_btn_done"
+        android:id="@+id/btn_club_list_AI"
         android:layout_width="match_parent"
         android:layout_height="60dp"
         android:layout_marginBottom="60dp"

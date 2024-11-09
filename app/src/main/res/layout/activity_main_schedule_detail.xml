@@ -20,7 +20,7 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
-        android:id="@+id/roz9cvso3m2a"
+        android:id="@+id/tv_main_schedule_detail_header"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="세부 일정"
@@ -32,7 +32,7 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <de.hdodenhof.circleimageview.CircleImageView
-        android:id="@+id/circleImageView"
+        android:id="@+id/iv_main_schedule_detail"
         android:layout_width="40dp"
         android:layout_height="40dp"
         android:layout_marginStart="20dp"
@@ -42,21 +42,21 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
-        android:id="@+id/ray3gbygvk2d"
+        android:id="@+id/tv_main_schedule_detail"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:text="투표 종료일: 행사 참가자"
         android:textColor="@color/white"
         style="@style/pretendard20"
-        app:layout_constraintBottom_toBottomOf="@+id/circleImageView"
+        app:layout_constraintBottom_toBottomOf="@+id/iv_main_schedule_detail"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/circleImageView"
-        app:layout_constraintTop_toTopOf="@+id/circleImageView"
+        app:layout_constraintStart_toEndOf="@+id/iv_main_schedule_detail"
+        app:layout_constraintTop_toTopOf="@+id/iv_main_schedule_detail"
         android:layout_marginStart="10dp"
         android:layout_marginEnd="20dp"/>
 
     <TextView
-        android:id="@+id/r8tjoch4g0yt"
+        android:id="@+id/tv_main_schedule_detail_people"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="인원"
@@ -66,4 +66,5 @@
         app:layout_constraintTop_toTopOf="parent"
         android:layout_marginTop="260dp"
         android:layout_marginStart="20dp"/>
+
 </androidx.constraintlayout.widget.ConstraintLayout>

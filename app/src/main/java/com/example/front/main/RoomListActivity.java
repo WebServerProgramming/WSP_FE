@@ -28,7 +28,7 @@ public class RoomListActivity extends AppCompatActivity {
         EdgeToEdge.enable(this);
         setContentView(R.layout.activity_club_list);
 
-        recyclerView = findViewById(R.id.rv_room_list);
+        recyclerView = findViewById(R.id.rv_club_list);
         linearLayoutManager = new LinearLayoutManager(this);
         recyclerView.setLayoutManager(linearLayoutManager);
 
@@ -44,7 +44,7 @@ public class RoomListActivity extends AppCompatActivity {
         main3Adapter.notifyDataSetChanged();
 
 
-        Button btnRoomListback = findViewById(R.id.btn_room_list_back);
+        Button btnRoomListback = findViewById(R.id.btn_club_list_back);
         btnRoomListback.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {

@@ -9,7 +9,7 @@
     android:background="@color/black">
 
     <Button
-        android:id="@+id/btn_room_list_back"
+        android:id="@+id/btn_club_rating_back"
         android:layout_width="32dp"
         android:layout_height="32dp"
         android:layout_marginStart="20dp"
@@ -20,7 +20,7 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
-        android:id="@+id/tv_room_list"
+        android:id="@+id/tv_club_rating"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_gravity="center"
@@ -35,7 +35,7 @@
         android:layout_marginEnd="20dp"/>
 
     <TextView
-        android:id="@+id/rbcu0v3usw47"
+        android:id="@+id/tv_club_rating_rate"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="별점"
@@ -45,8 +45,9 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         android:layout_marginStart="20dp" />
+
     <RatingBar
-        android:id="@+id/ratingBar"
+        android:id="@+id/rb_club_rating"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="center_horizontal"
@@ -55,14 +56,14 @@
         android:numStars="5"
         android:progressTint="@color/main_blue_500"
         android:progressBackgroundTint="@color/main_gray_600"
-        android:rating="0"
-        android:stepSize="1.0"
+        android:rating="5"
+        android:stepSize="0.5"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
 
     <TextView
-        android:id="@+id/rbcu0v3usw4k"
+        android:id="@+id/tv_club_rating_list"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="리뷰 목록"

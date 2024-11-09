@@ -24,7 +24,7 @@ public class Main2Adapter extends RecyclerView.Adapter<Main2Adapter.CustomViewHo
     @NonNull
     @Override
     public Main2Adapter.CustomViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
-        View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.calendar_list, parent,false);
+        View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.item_main_calendar, parent,false);
         CustomViewHolder holder = new CustomViewHolder(view);
 
         return holder;

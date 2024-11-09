@@ -22,7 +22,7 @@ public class MyPageActivity extends AppCompatActivity {
             v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom);
             return insets;
         });*/
-        Button btn = findViewById(R.id.mypage_btn_setting_alarms);
+        Button btn = findViewById(R.id.btn_mypage_alert);
         btn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {

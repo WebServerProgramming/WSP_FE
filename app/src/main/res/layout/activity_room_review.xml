@@ -9,19 +9,18 @@
     android:background="@color/black">
 
     <Button
-        android:id="@+id/btn_room_back"
+        android:id="@+id/btn_room_review_back"
         android:layout_width="32dp"
         android:layout_height="32dp"
         android:layout_marginStart="20dp"
         android:layout_marginTop="24dp"
-
         android:background="@drawable/baseline_arrow_back_24"
         android:backgroundTint="@color/white"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
-        android:id="@+id/textView2"
+        android:id="@+id/tv_room_review"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="80dp"
@@ -33,7 +32,7 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
-        android:id="@+id/textView3"
+        android:id="@+id/tv_room_review_2"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="20dp"
@@ -47,7 +46,7 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
-        android:id="@+id/textView4"
+        android:id="@+id/tv_room_review_rating"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="20dp"
@@ -60,8 +59,23 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
+    <RatingBar
+        android:id="@+id/ratingBar"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginStart="80dp"
+        android:layout_marginTop="250dp"
+        android:numStars="5"
+        android:progressTint="@color/main_blue_500"
+        android:progressBackgroundTint="@color/main_gray_600"
+        android:rating="3"
+        android:stepSize="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
     <TextView
-        android:id="@+id/textView5"
+        android:id="@+id/tv_room_review_review"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="20dp"
@@ -74,8 +88,8 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
-    <TextView
-        android:id="@+id/mypage_alarm_btn_review"
+    <EditText
+        android:id="@+id/et_room_review_review"
         style="@style/pretendard20"
         android:layout_width="match_parent"
         android:layout_height="60dp"
@@ -83,15 +97,17 @@
         android:layout_marginEnd="20dp"
         android:background="@drawable/layout_round_radius12_gray600"
         android:layout_marginTop="350dp"
-        android:text="내용을 작성하세요."
-        android:textColor="@color/main_gray_400"
-        android:paddingHorizontal="5dp"
+        android:textColor="@color/white"
+        android:hint="내용을 작성하세요."
+        android:textColorHint="@color/main_gray_400"
+        android:padding="10dp"
+        android:gravity="top"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
     <Button
-        android:id="@+id/mypage_alarm_btn_done"
+        android:id="@+id/btn_room_review_done"
         android:layout_width="match_parent"
         android:layout_height="60dp"
         android:layout_marginBottom="60dp"
@@ -104,20 +120,5 @@
         app:layout_constraintStart_toStartOf="parent"
         android:layout_marginStart="20dp"
         android:layout_marginEnd="20dp"/>
-
-    <RatingBar
-        android:id="@+id/ratingBar"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_gravity="center_horizontal"
-        android:layout_marginStart="80dp"
-        android:layout_marginTop="250dp"
-        android:numStars="5"
-        android:progressTint="@color/main_blue_500"
-        android:progressBackgroundTint="@color/main_gray_600"
-        android:rating="3"
-        android:stepSize="1.0"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

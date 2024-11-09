@@ -41,6 +41,7 @@
             android:layout_marginTop="6dp"/>
 
         <TextView
+            android:id="@+id/tv_login_selection_left"
             style="@style/pretendard24"
             android:layout_width="63dp"
             android:layout_height="29dp"
@@ -73,10 +74,11 @@
             app:layout_constraintTop_toTopOf="parent" />
 
         <TextView
+            android:id="@+id/tv_login_selection_right"
             style="@style/pretendard24"
             android:layout_width="63dp"
             android:layout_height="29dp"
-            android:text="사용자"
+            android:text="관리자"
             android:textColor="@color/white"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"

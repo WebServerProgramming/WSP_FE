@@ -169,12 +169,13 @@
 
     </TableLayout>
 
-    <android.widget.Button
+    <Button
         android:id="@+id/mypage_alarm_btn_done"
         android:layout_width="match_parent"
         android:layout_height="60dp"
         android:layout_marginBottom="60dp"
-        android:background="@drawable/layout_round_radius12_gray600"
+        android:background="@drawable/layout_round_radius12_default"
+        android:backgroundTint="@color/main_gray_600"
         android:text="저장하기"
         android:textColor="@color/white"
         style="@style/pretendard20"

@@ -12,9 +12,7 @@ import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.front.R;
-import com.example.front.club.ClubRegistrationActivity;
 import com.example.front.club.ClubStarActivity;
-import com.example.front.login.LoginSelectionActivity;
 
 import java.util.ArrayList;
 
@@ -29,7 +27,7 @@ public class Main3Adapter extends RecyclerView.Adapter<Main3Adapter.CustomViewHo
     @NonNull
     @Override
     public Main3Adapter.CustomViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
-        View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.item_room_list, parent,false);
+        View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.item_club_club, parent,false);
         CustomViewHolder holder = new CustomViewHolder(view);
 
         return holder;
@@ -87,11 +85,11 @@ public class Main3Adapter extends RecyclerView.Adapter<Main3Adapter.CustomViewHo
 
         public CustomViewHolder(@NonNull View itemView) {
             super(itemView);
-            this.ivRoomListClub = (ImageView) itemView.findViewById(R.id.iv_room_list_club);
-            this.tvRoomListName = (TextView) itemView.findViewById(R.id.tv_room_list_name);
-            this.tvRoomListIntroduction = (TextView) itemView.findViewById(R.id.tv_room_list_introduction);
-            this.btnRoomListAdd = (Button) itemView.findViewById(R.id.btn_room_list_add);
-            this.tvRoomListStar = (TextView) itemView.findViewById(R.id.tv_room_list_star);
+            this.ivRoomListClub = (ImageView) itemView.findViewById(R.id.iv_item_club_club);
+            this.tvRoomListName = (TextView) itemView.findViewById(R.id.tv_item_club_club_name);
+            this.tvRoomListIntroduction = (TextView) itemView.findViewById(R.id.tv_item_club_club_introduction);
+            this.btnRoomListAdd = (Button) itemView.findViewById(R.id.btn_item_club_list_add);
+            this.tvRoomListStar = (TextView) itemView.findViewById(R.id.tv_item_club_club_star);
         }
     }
 }

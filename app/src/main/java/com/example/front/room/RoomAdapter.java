@@ -3,18 +3,15 @@ package com.example.front.room;
 import android.content.Intent;
 import android.content.res.ColorStateList;
 import android.graphics.Color;
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.ImageView;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.front.R;
-import com.example.front.main.Main1Data;
 
 import java.util.ArrayList;
 
@@ -29,7 +26,7 @@ public class RoomAdapter extends RecyclerView.Adapter<RoomAdapter.CustomViewHold
     @NonNull
     @Override
     public RoomAdapter.CustomViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
-        View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.item_room, parent,false);
+        View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.item_room_content, parent,false);
         CustomViewHolder holder = new CustomViewHolder(view);
 
         return holder;
@@ -97,8 +94,8 @@ public class RoomAdapter extends RecyclerView.Adapter<RoomAdapter.CustomViewHold
 
         public CustomViewHolder(@NonNull View itemView) {
             super(itemView);
-            this.tvRoomCategory = (TextView) itemView.findViewById(R.id.tv_room_category);
-            this.tvRoomContent = (TextView) itemView.findViewById(R.id.tv_room_content);
+            this.tvRoomCategory = (TextView) itemView.findViewById(R.id.tv_item_room_content_category);
+            this.tvRoomContent = (TextView) itemView.findViewById(R.id.tv_item_room_content_content);
         }
     }
 }

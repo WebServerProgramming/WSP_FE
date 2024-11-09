@@ -4,7 +4,6 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-
     tools:context=".mypage.MyPageActivity"
     android:background="@color/black">
 
@@ -32,7 +31,7 @@
         app:layout_constraintTop_toTopOf="@+id/btn_mypage_back" />
 
     <de.hdodenhof.circleimageview.CircleImageView
-        android:id="@+id/mypage_iv_profile"
+        android:id="@+id/iv_mypage_profile"
         android:layout_width="140dp"
         android:layout_height="140dp"
         android:layout_marginTop="120dp"
@@ -42,7 +41,7 @@
         app:layout_constraintRight_toRightOf="parent" />
 
     <TextView
-        android:id="@+id/mypage_tv_nickname"
+        android:id="@+id/tv_mypage_nickname"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="30dp"
@@ -50,16 +49,17 @@
         android:text="닉네임"
         android:textColor="@color/white"
         style="@style/pretendard24"
-        app:layout_constraintTop_toBottomOf="@+id/mypage_iv_profile"
+        app:layout_constraintTop_toBottomOf="@+id/iv_mypage_profile"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"  />
 
 
     <android.widget.Button
-        android:id="@+id/mypage_btn_setting_alarms"
+        android:id="@+id/btn_mypage_alert"
         android:layout_width="match_parent"
         android:layout_height="60dp"
-        android:background="@drawable/layout_round_radius12_gray600"
+        android:background="@drawable/layout_round_radius12_default"
+        android:backgroundTint="@color/main_gray_600"
         android:text="알림 설정"
         android:textColor="@color/white"
         style="@style/pretendard20"
@@ -72,15 +72,16 @@
 
 
     <android.widget.Button
-        android:id="@+id/mypage_btn_logout"
+        android:id="@+id/btn_mypage_logout"
         android:layout_width="match_parent"
         android:layout_height="60dp"
         android:layout_marginTop="25dp"
-        android:background="@drawable/layout_round_radius12_gray600"
+        android:background="@drawable/layout_round_radius12_default"
+        android:backgroundTint="@color/main_gray_600"
         android:text="로그아웃"
         android:textColor="@color/white"
         style="@style/pretendard20"
-        app:layout_constraintTop_toBottomOf="@+id/mypage_btn_setting_alarms"
+        app:layout_constraintTop_toBottomOf="@+id/btn_mypage_alert"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
         android:layout_marginStart="20dp"

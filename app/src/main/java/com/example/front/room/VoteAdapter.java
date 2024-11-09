@@ -1,7 +1,5 @@
 package com.example.front.room;
 
-import android.content.res.ColorStateList;
-import android.graphics.Color;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -26,7 +24,7 @@ public class VoteAdapter extends RecyclerView.Adapter<VoteAdapter.CustomViewHold
     @NonNull
     @Override
     public VoteAdapter.CustomViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
-        View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.item_vote, parent,false);
+        View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.item_room_vote, parent,false);
         CustomViewHolder holder = new CustomViewHolder(view);
 
         return holder;
@@ -71,8 +69,8 @@ public class VoteAdapter extends RecyclerView.Adapter<VoteAdapter.CustomViewHold
 
         public CustomViewHolder(@NonNull View itemView) {
             super(itemView);
-            this.btnVoteRadio = (Button) itemView.findViewById(R.id.btn_vote_radio);
-            this.tvVoteContent = (TextView) itemView.findViewById(R.id.tv_vote_content);
+            this.btnVoteRadio = (Button) itemView.findViewById(R.id.btn_item_room_vote_radio);
+            this.tvVoteContent = (TextView) itemView.findViewById(R.id.tv_item_room_vote_content);
         }
     }
 }
