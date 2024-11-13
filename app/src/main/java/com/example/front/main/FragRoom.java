@@ -1,6 +1,6 @@
 package com.example.front.main;
 
-import static com.example.front.R.*;
+import static com.example.front.R.drawable;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -16,7 +16,7 @@ import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.front.R;
-import com.example.front.mypage.MyPageActivity;
+import com.example.front.club.ClubListActivity;
 
 import java.util.ArrayList;
 
@@ -25,8 +25,8 @@ public class FragRoom extends Fragment {
     private View view;
 
     // RecyclerView
-    private ArrayList<Main1Data> arrayList;
-    private Main1Adapter main1Adapter;
+    private ArrayList<MainRoomData> arrayList;
+    private MainRoomAdapter mainRoomAdapter;
     private RecyclerView recyclerView;
     private LinearLayoutManager linearLayoutManager;
 
@@ -40,20 +40,20 @@ public class FragRoom extends Fragment {
         recyclerView.setLayoutManager(linearLayoutManager);
 
         arrayList = new ArrayList<>();
-        main1Adapter = new Main1Adapter(arrayList);
-        recyclerView.setAdapter(main1Adapter);
+        mainRoomAdapter = new MainRoomAdapter(arrayList);
+        recyclerView.setAdapter(mainRoomAdapter);
 
 
 
-        Main1Data main1Data = new Main1Data(drawable.basketball,"예시");
-        arrayList.add(main1Data);
-        main1Adapter.notifyDataSetChanged();
+        MainRoomData mainRoomData = new MainRoomData(drawable.basketball,"예시");
+        arrayList.add(mainRoomData);
+        mainRoomAdapter.notifyDataSetChanged();
 
         Button btn = view.findViewById(R.id.btn_main_club_create);
         btn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(getActivity(), RoomListActivity.class);
+                Intent intent = new Intent(getActivity(), ClubListActivity.class);
                 startActivity(intent);
             }
         });

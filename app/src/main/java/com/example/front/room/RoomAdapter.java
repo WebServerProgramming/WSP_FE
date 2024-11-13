@@ -15,7 +15,7 @@ import com.example.front.R;
 
 import java.util.ArrayList;
 
-public class RoomAdapter extends RecyclerView.Adapter<RoomAdapter.CustomViewHolder>{
+public class RoomAdapter extends RecyclerView.Adapter<RoomAdapter.CustomViewHolder> {
 
     private ArrayList<RoomData> arrayList;
 
@@ -26,7 +26,7 @@ public class RoomAdapter extends RecyclerView.Adapter<RoomAdapter.CustomViewHold
     @NonNull
     @Override
     public RoomAdapter.CustomViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
-        View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.item_room_content, parent,false);
+        View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.item_room_content, parent, false);
         CustomViewHolder holder = new CustomViewHolder(view);
 
         return holder;
@@ -38,12 +38,15 @@ public class RoomAdapter extends RecyclerView.Adapter<RoomAdapter.CustomViewHold
         holder.tvRoomCategory.setText(category);
 
         int backgroundColor = Color.parseColor("#CCCCCC");
+        Class<?> activityClass = NoticeActivity.class;
         switch (category) {
             case "공지":
                 backgroundColor = Color.parseColor("#000000");
+                activityClass = NoticeActivity.class;
                 break;
             case "투표":
                 backgroundColor = Color.parseColor("#3C55EE");
+                activityClass = VoteActivity.class;
                 break;
             case "행사":
                 backgroundColor = Color.parseColor("#FF7E3E");
@@ -57,14 +60,15 @@ public class RoomAdapter extends RecyclerView.Adapter<RoomAdapter.CustomViewHold
         holder.tvRoomCategory.setBackgroundTintList(colorStateList);
 
 
-
         holder.tvRoomContent.setText(arrayList.get(position).getTvContent());
 
         holder.itemView.setTag(position);
+
+        Class<?> finalActivityClass = activityClass;
         holder.itemView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(view.getContext(), NoticeActivity.class);
+                Intent intent = new Intent(view.getContext(), finalActivityClass);
                 view.getContext().startActivity(intent);
                 //String curName = holder.tvClub.getText().toString();
                 //Toast.makeText(view.getContext(), curName, Toast.LENGTH_SHORT).show();
@@ -72,12 +76,11 @@ public class RoomAdapter extends RecyclerView.Adapter<RoomAdapter.CustomViewHold
         });
 
         /**holder.itemView.setOnLongClickListener(new View.OnLongClickListener() {
-            @Override
-            public boolean onLongClick(View view) {
+        @Override public boolean onLongClick(View view) {
 
-                return true;
-                // return false;
-            }
+        return true;
+        // return false;
+        }
         });*/
     }
 

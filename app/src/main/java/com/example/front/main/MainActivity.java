@@ -50,8 +50,7 @@ public class MainActivity extends AppCompatActivity {
             public boolean onNavigationItemSelected(@NonNull MenuItem item) {
                 if (item.getItemId() == R.id.menu_room) {
                     setFrag(0);
-                }
-                else if (item.getItemId() == R.id.menu_calendar) {
+                } else if (item.getItemId() == R.id.menu_calendar) {
                     setFrag(1);
                 }
                 return true;

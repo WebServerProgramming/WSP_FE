@@ -1,6 +1,8 @@
 package com.example.front.room;
 
 import android.os.Bundle;
+import android.view.View;
+import android.widget.Button;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
@@ -37,5 +39,13 @@ public class VoteActivity extends AppCompatActivity {
         arrayList.add(new VoteData("행사"));
         arrayList.add(new VoteData("정기행사"));
         voteAdapter.notifyDataSetChanged();
+
+        Button btnBack = findViewById(R.id.btn_room_vote_back);
+        btnBack.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                finish();
+            }
+        });
     }
 }

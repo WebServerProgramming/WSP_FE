@@ -28,11 +28,11 @@ public class FragSchedule extends Fragment {
     private HashMap<CalendarDay, String> eventMap = new HashMap<>();
     private View view;
 
-    private Map<CalendarDay, List<Main2Data>> dateMain2Map = new HashMap<>();
+    private Map<CalendarDay, List<MainScheduleData>> dateMain2Map = new HashMap<>();
 
     // RecyclerView
-    private ArrayList<Main2Data> arrayList;
-    private Main2Adapter main2Adapter;
+    private ArrayList<MainScheduleData> arrayList;
+    private MainScheduleAdapter mainScheduleAdapter;
     private RecyclerView recyclerView;
     private LinearLayoutManager linearLayoutManager;
 
@@ -46,8 +46,8 @@ public class FragSchedule extends Fragment {
         recyclerView.setLayoutManager(linearLayoutManager);
 
         arrayList = new ArrayList<>();
-        main2Adapter = new Main2Adapter(arrayList);
-        recyclerView.setAdapter(main2Adapter);
+        mainScheduleAdapter = new MainScheduleAdapter(arrayList);
+        recyclerView.setAdapter(mainScheduleAdapter);
 
 
         calendarView = view.findViewById(R.id.cv_main_schedule);
@@ -58,25 +58,25 @@ public class FragSchedule extends Fragment {
         calendarView.setOnDateChangedListener((widget, date, selected) -> {
             if (selected) {
                 arrayList = new ArrayList<>();
-                main2Adapter = new Main2Adapter(arrayList);
-                recyclerView.setAdapter(main2Adapter);
-                List<Main2Data> event = dateMain2Map.get(date);
+                mainScheduleAdapter = new MainScheduleAdapter(arrayList);
+                recyclerView.setAdapter(mainScheduleAdapter);
+                List<MainScheduleData> event = dateMain2Map.get(date);
 
                 if (event != null) {
                     arrayList.addAll(event);
-                    main2Adapter.notifyDataSetChanged();
+                    mainScheduleAdapter.notifyDataSetChanged();
                 }
             }
         });
 
-        Main2Data main2Data = new Main2Data(R.drawable.basketball,"투표 종료일: 행사 참가자", CalendarDay.from(2024,10,5));
-        addData(main2Data.getCalendarDay(), main2Data);
-        main2Data = new Main2Data(R.drawable.tennis,"투표 시작일: 동아리 회식 인원 투표", CalendarDay.from(2024,10,5));
-        addData(main2Data.getCalendarDay(), main2Data);
+        MainScheduleData mainScheduleData = new MainScheduleData(R.drawable.basketball, "투표 종료일: 행사 참가자", CalendarDay.from(2024, 10, 5));
+        addData(mainScheduleData.getCalendarDay(), mainScheduleData);
+        mainScheduleData = new MainScheduleData(R.drawable.tennis, "투표 시작일: 동아리 회식 인원 투표", CalendarDay.from(2024, 10, 5));
+        addData(mainScheduleData.getCalendarDay(), mainScheduleData);
 
-        calendarDayList.add(CalendarDay.from(2024,10,5));
-        calendarDayList.add(CalendarDay.from(2024,10,13));
-        calendarDayList.add(CalendarDay.from(2024,10,15));
+        calendarDayList.add(CalendarDay.from(2024, 10, 5));
+        calendarDayList.add(CalendarDay.from(2024, 10, 13));
+        calendarDayList.add(CalendarDay.from(2024, 10, 15));
 
         Decorator decorator = new Decorator(calendarDayList, getActivity());
         calendarView.addDecorator(decorator);
@@ -86,10 +86,10 @@ public class FragSchedule extends Fragment {
     }
 
     // 날짜에 문자열을 추가하는 메서드
-    public void addData(CalendarDay calendarDay, Main2Data main2Data) {
+    public void addData(CalendarDay calendarDay, MainScheduleData mainScheduleData) {
         // 해당 날짜에 이미 저장된 리스트가 있으면 가져오고, 없으면 새로 만듦
-        List<Main2Data> values = dateMain2Map.getOrDefault(calendarDay, new ArrayList<>());
-        values.add(main2Data);
+        List<MainScheduleData> values = dateMain2Map.getOrDefault(calendarDay, new ArrayList<>());
+        values.add(mainScheduleData);
         dateMain2Map.put(calendarDay, values);
     }
 }

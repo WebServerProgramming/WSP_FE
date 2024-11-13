@@ -12,8 +12,6 @@ import androidx.core.view.ViewCompat;
 import androidx.core.view.WindowInsetsCompat;
 
 import com.example.front.R;
-import com.example.front.login.LoginSelectionActivity;
-import com.example.front.main.MainActivity;
 
 public class ChallengeListActivity extends AppCompatActivity {
 

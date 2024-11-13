@@ -1,7 +1,6 @@
 package com.example.front.login;
 
 import android.content.Intent;
-import android.net.Uri;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
@@ -13,14 +12,8 @@ import android.widget.ImageView;
 import androidx.activity.EdgeToEdge;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.browser.customtabs.CustomTabsIntent;
-import androidx.constraintlayout.widget.ConstraintLayout;
-import androidx.core.graphics.Insets;
-import androidx.core.view.ViewCompat;
-import androidx.core.view.WindowInsetsCompat;
 
 import com.example.front.R;
-import com.example.front.main.MainActivity;
 
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
@@ -76,6 +69,7 @@ public class LoginActivity extends AppCompatActivity {
             Log.e(TAG, "failed token parsing");
         }
     }
+
     private String getQueryParam(String url, String paramName) {
         Pattern pattern = Pattern.compile(paramName + "=([^&]+)");
         Matcher matcher = pattern.matcher(url);

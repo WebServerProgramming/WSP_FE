@@ -13,7 +13,7 @@ import com.example.front.R;
 
 import java.util.ArrayList;
 
-public class VoteAdapter extends RecyclerView.Adapter<VoteAdapter.CustomViewHolder>{
+public class VoteAdapter extends RecyclerView.Adapter<VoteAdapter.CustomViewHolder> {
 
     private ArrayList<VoteData> arrayList;
 
@@ -24,7 +24,7 @@ public class VoteAdapter extends RecyclerView.Adapter<VoteAdapter.CustomViewHold
     @NonNull
     @Override
     public VoteAdapter.CustomViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
-        View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.item_room_vote, parent,false);
+        View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.item_room_vote, parent, false);
         CustomViewHolder holder = new CustomViewHolder(view);
 
         return holder;
@@ -47,12 +47,11 @@ public class VoteAdapter extends RecyclerView.Adapter<VoteAdapter.CustomViewHold
         });
 
         /**holder.itemView.setOnLongClickListener(new View.OnLongClickListener() {
-            @Override
-            public boolean onLongClick(View view) {
+        @Override public boolean onLongClick(View view) {
 
-                return true;
-                // return false;
-            }
+        return true;
+        // return false;
+        }
         });*/
     }
 

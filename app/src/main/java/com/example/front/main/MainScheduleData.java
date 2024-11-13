@@ -2,13 +2,13 @@ package com.example.front.main;
 
 import com.prolificinteractive.materialcalendarview.CalendarDay;
 
-public class Main2Data {
+public class MainScheduleData {
 
     private int ivCalendarList;
     private String tvCalendarList;
     private CalendarDay calendarDay;
 
-    public Main2Data(int ivCalendarList, String tvCalendarList, CalendarDay calendarDay) {
+    public MainScheduleData(int ivCalendarList, String tvCalendarList, CalendarDay calendarDay) {
         this.ivCalendarList = ivCalendarList;
         this.tvCalendarList = tvCalendarList;
         this.calendarDay = calendarDay;

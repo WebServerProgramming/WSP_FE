@@ -1,4 +1,4 @@
-package com.example.front.main;
+package com.example.front.club;
 
 import android.content.Intent;
 import android.view.LayoutInflater;
@@ -12,29 +12,28 @@ import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.front.R;
-import com.example.front.club.ClubStarActivity;
 
 import java.util.ArrayList;
 
-public class Main3Adapter extends RecyclerView.Adapter<Main3Adapter.CustomViewHolder>{
+public class ClubListAdapter extends RecyclerView.Adapter<ClubListAdapter.CustomViewHolder> {
 
-    private ArrayList<Main3Data> arrayList;
+    private ArrayList<ClubListData> arrayList;
 
-    public Main3Adapter(ArrayList<Main3Data> arrayList) {
+    public ClubListAdapter(ArrayList<ClubListData> arrayList) {
         this.arrayList = arrayList;
     }
 
     @NonNull
     @Override
-    public Main3Adapter.CustomViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
-        View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.item_club_club, parent,false);
+    public ClubListAdapter.CustomViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
+        View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.item_club_club, parent, false);
         CustomViewHolder holder = new CustomViewHolder(view);
 
         return holder;
     }
 
     @Override
-    public void onBindViewHolder(@NonNull Main3Adapter.CustomViewHolder holder, int position) {
+    public void onBindViewHolder(@NonNull ClubListAdapter.CustomViewHolder holder, int position) {
         holder.ivRoomListClub.setImageResource(arrayList.get(position).getIvRoomListClub());
         holder.tvRoomListName.setText(arrayList.get(position).getTvRoomListName());
         holder.tvRoomListIntroduction.setText(arrayList.get(position).getTvRoomListIntroduction());
@@ -58,14 +57,13 @@ public class Main3Adapter extends RecyclerView.Adapter<Main3Adapter.CustomViewHo
             }
         });
 
-        /**holder.itemView.setOnLongClickListener(new View.OnLongClickListener() {
+        holder.btnRoomListAdd.setOnClickListener(new View.OnClickListener() {
             @Override
-            public boolean onLongClick(View view) {
-
-                return true;
-                // return false;
+            public void onClick(View view) {
+                Intent intent = new Intent(view.getContext(), ClubRegistrationActivity.class);
+                view.getContext().startActivity(intent);
             }
-        });*/
+        });
     }
 
     @Override

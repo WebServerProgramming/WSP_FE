@@ -4,7 +4,8 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:layout_marginBottom="15dp">
+    android:layout_marginBottom="15dp"
+    android:layout_marginHorizontal="20dp">
 
 
     <LinearLayout
@@ -19,15 +20,15 @@
 
             <TextView
                 android:id="@+id/tv_item_room_content_category"
-                android:layout_width="78dp"
-                android:layout_height="29dp"
+                style="@style/pretendard20"
+                android:layout_width="80dp"
+                android:layout_height="30dp"
                 android:layout_marginStart="5dp"
                 android:background="@drawable/button_round_black12"
                 android:backgroundTint="@color/main_blue_900"
                 android:text="카테고리"
                 android:textAlignment="center"
                 android:textColor="@color/white"
-                style="@style/pretendard20"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent" />

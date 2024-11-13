@@ -1,11 +1,11 @@
 package com.example.front.main;
 
-public class Main1Data {
+public class MainRoomData {
 
     private int ivClub;
     private String tvClub;
 
-    public Main1Data(int ivClub, String tvClub) {
+    public MainRoomData(int ivClub, String tvClub) {
         this.ivClub = ivClub;
         this.tvClub = tvClub;
     }

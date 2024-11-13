@@ -1,13 +1,13 @@
-package com.example.front.main;
+package com.example.front.club;
 
-public class Main3Data {
+public class ClubListData {
 
     private int ivRoomListClub;
     private String tvRoomListName;
     private String tvRoomListIntroduction;
     private String tvRoomListStar;
 
-    public Main3Data(int ivRoomListClub, String tvRoomListName, String tvRoomListIntroduction, String tvRoomListStar) {
+    public ClubListData(int ivRoomListClub, String tvRoomListName, String tvRoomListIntroduction, String tvRoomListStar) {
         this.ivRoomListClub = ivRoomListClub;
         this.tvRoomListName = tvRoomListName;
         this.tvRoomListIntroduction = tvRoomListIntroduction;
