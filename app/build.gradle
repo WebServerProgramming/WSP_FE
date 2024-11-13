@@ -59,4 +59,13 @@ dependencies {
 
     // 카카오 SDK 모듈 - 카카오 링크
     implementation "com.kakao.sdk:v2-all-rx:2.13.0"
+
+    // Retrofit
+    implementation 'com.squareup.retrofit2:retrofit:2.9.0'
+    implementation 'com.squareup.retrofit2:converter-gson:2.9.0' // JSON 변환을 위한 Gson 변환기
+    implementation 'com.squareup.retrofit2:converter-moshi:2.9.0' // JSON 변환을 위한 Moshi 변환기 (선택적)
+
+    // OkHttp
+    implementation 'com.squareup.okhttp3:okhttp:4.10.0'
+    implementation 'com.squareup.okhttp3:logging-interceptor:4.10.0' // 네트워크 요청 및 응답을 로그로 확인하기 위한 로깅 인터셉터
 }

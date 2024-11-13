@@ -3,10 +3,15 @@ package com.example.front.login;
 import android.content.Intent;
 import android.net.Uri;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
+import android.webkit.WebResourceRequest;
+import android.webkit.WebView;
+import android.webkit.WebViewClient;
 import android.widget.ImageView;
 
 import androidx.activity.EdgeToEdge;
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.browser.customtabs.CustomTabsIntent;
 import androidx.constraintlayout.widget.ConstraintLayout;
@@ -17,69 +22,76 @@ import androidx.core.view.WindowInsetsCompat;
 import com.example.front.R;
 import com.example.front.main.MainActivity;
 
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
+
 public class LoginActivity extends AppCompatActivity {
+    private static final String TAG = "MainActivity";
+    private static final String AUTH_URL = "https://chawoomi.link/oauth2/authorization/kakao";
+    private static final String CALLBACK_URL = "https://chawoomi.link/oauth2/callback/token";
+
+    WebView webView;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         EdgeToEdge.enable(this);
         setContentView(R.layout.activity_login);
-        /*ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main), (v, insets) -> {
-            Insets systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars());
-            v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom);
-            return insets;
-        });*/
 
+        webView = findViewById(R.id.webView);
         ImageView iv = findViewById(R.id.iv_login_kakao);
         iv.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(LoginActivity.this, LoginSelectionActivity.class);
-                startActivity(intent);
+                webView.setVisibility(View.VISIBLE);
+                webView.getSettings().setJavaScriptEnabled(true);
+                webView.setWebViewClient(new WebViewClient() {
+                    @Override
+                    public boolean shouldOverrideUrlLoading(@NonNull WebView view, @NonNull WebResourceRequest request) {
+                        String url = request.getUrl().toString();
+
+                        if (url.startsWith(CALLBACK_URL)) {
+                            handleCallbackUrl(url);
+                            return true;
+                        }
+                        return super.shouldOverrideUrlLoading(view, request);
+                    }
+                });
+                webView.loadUrl(AUTH_URL);
             }
         });
-        /*iv.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                // 카카오 로그인 URL
-                String kakaoAuthUrl = "https://chawoomi.link/oauth2/authorization/kakao";
-
-                // CustomTabsIntent 설정
-                CustomTabsIntent.Builder builder = new CustomTabsIntent.Builder();
-                builder.setShowTitle(true);
-                CustomTabsIntent customTabsIntent = builder.build();
-
-                // Custom Tab으로 카카오 로그인 페이지 열기
-                customTabsIntent.launchUrl(LoginActivity.this, Uri.parse(kakaoAuthUrl));
-            }
-        });
-        /*cl.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Intent intent = new Intent(LoginSelectionActivity.this, MainActivity.class);
-                startActivity(intent);
-            }
-        });*/
     }
 
-    @Override
-    protected void onResume() {
-        super.onResume();
+    private void handleCallbackUrl(String url) {
+        Log.d(TAG, "Callback URL: " + url);
+        webView.setVisibility(View.INVISIBLE);
+        String accessToken = getQueryParam(url, "accessToken");
+        String refreshToken = getQueryParam(url, "refreshToken");
 
-        // 여기에서 리디렉션 URL을 처리하기 위해 Intent를 받을 수 있습니다.
-        Intent intent = getIntent();
-        Uri data = intent.getData();
-
-        if (data != null && data.toString().contains("code=")) {
-            String authorizationCode = data.getQueryParameter("code");
-            handleAuthorizationCode(authorizationCode);
+        if (accessToken != null && refreshToken != null) {
+            Log.d(TAG, "Access Token: " + accessToken);
+            Log.d(TAG, "Refresh Token: " + refreshToken);
+            saveTokens(accessToken, refreshToken);
+        } else {
+            Log.e(TAG, "failed token parsing");
         }
     }
-
-    private void handleAuthorizationCode(String code) {
-        Intent intent = new Intent(this,LoginSelectionActivity.class);
-        startActivity(intent);
-        // 받은 authorization code로 액세스 토큰을 요청하는 로직을 구현합니다.
+    private String getQueryParam(String url, String paramName) {
+        Pattern pattern = Pattern.compile(paramName + "=([^&]+)");
+        Matcher matcher = pattern.matcher(url);
+        if (matcher.find()) {
+            return matcher.group(1);
+        }
+        return null;
     }
 
+    private void saveTokens(String accessToken, String refreshToken) {
+        getSharedPreferences("auth", MODE_PRIVATE).edit()
+                .putString("access_token", accessToken)
+                .putString("refresh_token", refreshToken)
+                .apply();
+        Log.i(TAG, "token saved");
+        Intent intent = new Intent(LoginActivity.this, LoginSelectionActivity.class);
+        startActivity(intent);
+    }
 }
