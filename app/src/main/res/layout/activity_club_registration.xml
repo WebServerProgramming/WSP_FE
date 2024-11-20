@@ -90,12 +90,12 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <Button
-        android:id="@+id/mypage_alarm_btn_done"
+        android:id="@+id/btn_club_registration_done"
         android:layout_width="match_parent"
         android:layout_height="60dp"
         android:layout_marginBottom="60dp"
-        android:background="@drawable/layout_round_radius12_default"
-        android:backgroundTint="@color/main_gray_600"
+        android:background="@drawable/button_enabled"
+        android:enabled="false"
         android:text="가입 신청하기"
         android:textColor="@color/white"
         style="@style/pretendard20"
