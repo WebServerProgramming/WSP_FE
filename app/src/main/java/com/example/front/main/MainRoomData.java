@@ -1,13 +1,22 @@
 package com.example.front.main;
 
 public class MainRoomData {
-
+    private int id;
     private int ivClub;
     private String tvClub;
 
-    public MainRoomData(int ivClub, String tvClub) {
+    public MainRoomData(int id, int ivClub, String tvClub) {
+        this.id = id;
         this.ivClub = ivClub;
         this.tvClub = tvClub;
+    }
+
+    public int getId() {
+        return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
     }
 
     public int getIvClub() {

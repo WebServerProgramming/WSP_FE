@@ -8,4 +8,7 @@ public interface RetrofitAPI {
     @GET("/oauth2/authorization/kakao")
     Call<TokenResponse> getTokens(@Query("accessToken") String accessToken,
                                   @Query("refreshToken") String refreshToken);
+
+    @GET("/v1/api/club")
+    Call<ClubResponse> getClubList();
 }
