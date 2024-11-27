@@ -9,6 +9,11 @@ public interface RetrofitAPI {
     Call<TokenResponse> getTokens(@Query("accessToken") String accessToken,
                                   @Query("refreshToken") String refreshToken);
 
+    // get registered club
     @GET("/v1/api/club")
     Call<ClubResponse> getClubList();
+
+    // get user info
+    @GET("/v1/api/user")
+    Call<UserResponse> getUser();
 }
