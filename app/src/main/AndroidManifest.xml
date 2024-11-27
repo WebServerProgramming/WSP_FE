@@ -31,7 +31,7 @@
             android:name=".room.RoomReviewActivity"
             android:exported="false" />
         <activity
-            android:name=".club.ClubStarActivity"
+            android:name=".club.ClubReviewActivity"
             android:exported="false" />
         <activity
             android:name=".main.MainScheduleDetailActivity"

@@ -2,6 +2,7 @@ package com.example.front.retrofit;
 
 import retrofit2.Call;
 import retrofit2.http.GET;
+import retrofit2.http.Path;
 import retrofit2.http.Query;
 
 public interface RetrofitAPI {
@@ -16,4 +17,8 @@ public interface RetrofitAPI {
     // get user info
     @GET("/v1/api/user")
     Call<UserResponse> getUser();
+
+    // get review for club
+    @GET("/v1/api/club/{clubId}/people")
+    Call<ReviewResponse> getReview(@Path("clubId") int clubId);
 }

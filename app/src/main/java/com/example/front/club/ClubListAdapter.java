@@ -43,7 +43,7 @@ public class ClubListAdapter extends RecyclerView.Adapter<ClubListAdapter.Custom
         holder.itemView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(view.getContext(), ClubStarActivity.class);
+                Intent intent = new Intent(view.getContext(), ClubReviewActivity.class);
                 view.getContext().startActivity(intent);
                 //String curName = holder.tvClub.getText().toString();
                 //Toast.makeText(view.getContext(), curName, Toast.LENGTH_SHORT).show();
@@ -52,7 +52,7 @@ public class ClubListAdapter extends RecyclerView.Adapter<ClubListAdapter.Custom
         holder.tvRoomListStar.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(view.getContext(), ClubStarActivity.class);
+                Intent intent = new Intent(view.getContext(), ClubReviewActivity.class);
                 view.getContext().startActivity(intent);
             }
         });
