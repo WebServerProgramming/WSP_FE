@@ -22,11 +22,9 @@ import java.util.List;
 import java.util.Map;
 
 public class FragSchedule extends Fragment {
+    private View view;
     private MaterialCalendarView calendarView;
     private ArrayList<CalendarDay> calendarDayList = new ArrayList<>(); // month: month - 1
-
-    private HashMap<CalendarDay, String> eventMap = new HashMap<>();
-    private View view;
 
     private Map<CalendarDay, List<MainScheduleData>> dateMain2Map = new HashMap<>();
 
@@ -40,6 +38,8 @@ public class FragSchedule extends Fragment {
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         view = inflater.inflate(R.layout.fragment_main_schedule, container, false);
+
+        dateMain2Map = new HashMap<>();
 
         recyclerView = view.findViewById(R.id.rv_main_schedule);
         linearLayoutManager = new LinearLayoutManager(getActivity());
