@@ -21,4 +21,8 @@ public interface RetrofitAPI {
     // get review for club
     @GET("/v1/api/club/{clubId}/people")
     Call<ReviewResponse> getReview(@Path("clubId") int clubId);
+
+    // get notice list
+    @GET("v1/api/notice")
+    Call<RoomResponse> getRoom();
 }

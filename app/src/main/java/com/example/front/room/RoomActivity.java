@@ -2,6 +2,7 @@ package com.example.front.room;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
@@ -15,9 +16,18 @@ import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.front.R;
+import com.example.front.club.ClubReviewData;
+import com.example.front.retrofit.RetrofitAPI;
+import com.example.front.retrofit.RetrofitClientInstance;
+import com.example.front.retrofit.ReviewResponse;
+import com.example.front.retrofit.RoomResponse;
 import com.example.front.room.challenge.ChallengeListActivity;
 
 import java.util.ArrayList;
+
+import retrofit2.Call;
+import retrofit2.Callback;
+import retrofit2.Response;
 
 public class RoomActivity extends AppCompatActivity {
 
@@ -29,6 +39,8 @@ public class RoomActivity extends AppCompatActivity {
 
     private ImageView ivRoomProgress;
     private ConstraintLayout clRoomProgress;
+
+    private RoomData roomData;
 
 
     @Override
@@ -45,12 +57,40 @@ public class RoomActivity extends AppCompatActivity {
         roomAdapter = new RoomAdapter(arrayList);
         recyclerView.setAdapter(roomAdapter);
 
-        RoomData roomData = new RoomData("공지", "테스트용 공지");
+        RetrofitAPI apiService = RetrofitClientInstance.getApiService(this);
+        // 동아리 목록 조회 API 호출
+        apiService.getRoom().enqueue(new Callback<RoomResponse>() {
+            @Override
+            public void onResponse(Call<RoomResponse> call, Response<RoomResponse> response) {
+                if (response.isSuccessful() && response.body() != null) {
+                    RoomResponse roomResponse = response.body();
+
+                    // 결과 로그 출력
+                    Log.d("API Result", "Code: " + roomResponse.getResult().getCode());
+                    Log.d("API Message", "Message: " + roomResponse.getResult().getMessage());
+
+                    // 리뷰 목록 출력
+                    for (RoomResponse.Payload payload : roomResponse.getPayload()) {
+                        roomData = new RoomData("공지", payload.getTitle(), payload.getNoticeId());
+                        arrayList.add(roomData);
+                        Log.d("Review", "Title: " + payload.getTitle() + ", Id: " + payload.getNoticeId());
+                    }
+                    roomAdapter.notifyDataSetChanged();
+                } else {
+                    Log.e("API Error", "Response code: " + response.code());
+                }
+            }
+            @Override
+            public void onFailure(Call<RoomResponse> call, Throwable t) {
+                Log.e("API Error", "Failure: " + t.getMessage());
+            }
+        });
+        /*RoomData roomData = new RoomData("공지", "테스트용 공지");
         arrayList.add(roomData);
         arrayList.add(new RoomData("투표", "테스트용 투표"));
         arrayList.add(new RoomData("행사", "테스트용 행사"));
         arrayList.add(new RoomData("정기행사", "테스트용 정기행사"));
-        roomAdapter.notifyDataSetChanged();
+        roomAdapter.notifyDataSetChanged();*/
 
         ivRoomProgress = (ImageView) findViewById(R.id.iv_room_progress);
         clRoomProgress = (ConstraintLayout) findViewById(R.id.cl_room_progress);

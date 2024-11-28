@@ -4,6 +4,7 @@ public class RoomData {
 
     private String tvRoomCategory;
     private String tvContent;
+    private int id;
 
     public String getTvRoomCategory() {
         return tvRoomCategory;
@@ -21,10 +22,17 @@ public class RoomData {
         this.tvContent = tvContent;
     }
 
-    public RoomData(String tvRoomCategory, String tvContent) {
+    public int getId() {
+        return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
+    }
+
+    public RoomData(String tvRoomCategory, String tvContent, int id) {
         this.tvRoomCategory = tvRoomCategory;
         this.tvContent = tvContent;
-
-
+        this.id = id;
     }
 }
