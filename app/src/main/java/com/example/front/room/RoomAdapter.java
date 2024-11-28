@@ -69,6 +69,7 @@ public class RoomAdapter extends RecyclerView.Adapter<RoomAdapter.CustomViewHold
             @Override
             public void onClick(View view) {
                 Intent intent = new Intent(view.getContext(), finalActivityClass);
+                intent.putExtra("noticeId", arrayList.get(position).getId());
                 view.getContext().startActivity(intent);
                 //String curName = holder.tvClub.getText().toString();
                 //Toast.makeText(view.getContext(), curName, Toast.LENGTH_SHORT).show();

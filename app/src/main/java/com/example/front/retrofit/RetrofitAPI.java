@@ -25,4 +25,8 @@ public interface RetrofitAPI {
     // get notice list
     @GET("v1/api/notice")
     Call<RoomResponse> getRoom();
+
+    // get notice
+    @GET("v1/api/notice/{noticeId}")
+    Call<NoticeResponse> getNotice(@Path("noticeId") int noticeId);
 }
