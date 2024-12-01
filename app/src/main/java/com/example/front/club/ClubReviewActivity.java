@@ -1,5 +1,6 @@
 package com.example.front.club;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
@@ -59,9 +60,11 @@ public class ClubReviewActivity extends AppCompatActivity {
         clubReviewAdapter = new ClubReviewAdapter(arrayList);
         recyclerView.setAdapter(clubReviewAdapter);
 
+        Intent intent = getIntent();
+
         RetrofitAPI apiService = RetrofitClientInstance.getApiService(this);
         // 동아리 목록 조회 API 호출
-        apiService.getReview(0).enqueue(new Callback<ReviewResponse>() {
+        apiService.getReview(intent.getIntExtra("clubId", 0)).enqueue(new Callback<ReviewResponse>() {
             @Override
             public void onResponse(Call<ReviewResponse> call, Response<ReviewResponse> response) {
                 if (response.isSuccessful() && response.body() != null) {

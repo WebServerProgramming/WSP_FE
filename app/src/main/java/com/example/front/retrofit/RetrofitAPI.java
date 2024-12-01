@@ -11,8 +11,8 @@ public interface RetrofitAPI {
                                   @Query("refreshToken") String refreshToken);
 
     // get registered club
-    @GET("/v1/api/club")
-    Call<ClubResponse> getClubList();
+    @GET("/v1/api/club/my")
+    Call<ClubResponse> getMyClubList();
 
     // get user info
     @GET("/v1/api/user")
@@ -29,4 +29,8 @@ public interface RetrofitAPI {
     // get notice
     @GET("v1/api/notice/{noticeId}")
     Call<NoticeResponse> getNotice(@Path("noticeId") int noticeId);
+
+    // get every club list with rating
+    @GET("/v1/api/club")
+    Call<ClubListResponse> getAllClubList();
 }

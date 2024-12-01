@@ -47,10 +47,13 @@
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginTop="1dp"
+        android:paddingHorizontal="5dp"
         android:text="별점"
         android:textColor="@color/white"
         app:layout_constraintStart_toStartOf="@+id/tv_item_club_club_introduction"
-        app:layout_constraintTop_toBottomOf="@+id/tv_item_club_club_introduction" />
+        app:layout_constraintTop_toBottomOf="@+id/tv_item_club_club_introduction"
+        android:background="@drawable/layout_round_radius12_default"
+        android:backgroundTint="@color/main_blue_500"/>
 
     <Button
         android:id="@+id/btn_item_club_list_add"

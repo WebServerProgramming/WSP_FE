@@ -55,7 +55,7 @@ public class FragRoom extends Fragment {
 
         RetrofitAPI apiService = RetrofitClientInstance.getApiService(getContext());
         // 동아리 목록 조회 API 호출
-        apiService.getClubList().enqueue(new Callback<ClubResponse>() {
+        apiService.getMyClubList().enqueue(new Callback<ClubResponse>() {
             @Override
             public void onResponse(Call<ClubResponse> call, Response<ClubResponse> response) {
                 if (response.isSuccessful() && response.body() != null) {

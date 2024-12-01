@@ -6,12 +6,14 @@ public class ClubListData {
     private String tvRoomListName;
     private String tvRoomListIntroduction;
     private String tvRoomListStar;
+    private int id;
 
-    public ClubListData(int ivRoomListClub, String tvRoomListName, String tvRoomListIntroduction, String tvRoomListStar) {
+    public ClubListData(int ivRoomListClub, String tvRoomListName, String tvRoomListIntroduction, String tvRoomListStar, int id) {
         this.ivRoomListClub = ivRoomListClub;
         this.tvRoomListName = tvRoomListName;
         this.tvRoomListIntroduction = tvRoomListIntroduction;
         this.tvRoomListStar = tvRoomListStar;
+        this.id = id;
     }
 
     public int getIvRoomListClub() {
@@ -44,5 +46,13 @@ public class ClubListData {
 
     public void setTvRoomListStar(String tvRoomListStar) {
         this.tvRoomListStar = tvRoomListStar;
+    }
+
+    public int getId() {
+        return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
     }
 }
