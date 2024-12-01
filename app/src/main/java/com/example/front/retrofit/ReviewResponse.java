@@ -23,14 +23,14 @@ public class ReviewResponse {
     }
 
     public static class Payload {
-        private float totalRate;
+        private Double totalRate;
         private List<Reviews> reviews;
 
-        public float getTotalRate() {
+        public Double getTotalRate() {
             return totalRate;
         }
 
-        public void setTotalRate(float totalRate) {
+        public void setTotalRate(Double totalRate) {
             this.totalRate = totalRate;
         }
 

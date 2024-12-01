@@ -72,8 +72,8 @@ public class ClubReviewActivity extends AppCompatActivity {
                     Log.d("API Message", "Message: " + reviewResponse.getResult().getMessage());
 
                     // 총합 점수 출력
-                    rbClubReview.setRating(reviewResponse.getPayload().getTotalRate());
-                    Log.d("Total Rate", Float.toString(reviewResponse.getPayload().getTotalRate()));
+                    rbClubReview.setRating(reviewResponse.getPayload().getTotalRate().floatValue());
+                    Log.d("Total Rate", Double.toString(reviewResponse.getPayload().getTotalRate()));
 
                     // 리뷰 목록 출력
                     for (ReviewResponse.Reviews review : reviewResponse.getPayload().getReviews()) {
