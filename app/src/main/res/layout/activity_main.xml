@@ -41,13 +41,13 @@
         android:id="@+id/bnv_main"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        app:menu="@menu/bottom_menu_main"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
         android:background="@color/black"
         app:itemIconTint="@drawable/selector_main"
-        app:itemTextColor="@drawable/selector_main"/>
+        app:itemTextColor="@drawable/selector_main"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:menu="@menu/bottom_menu_main" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

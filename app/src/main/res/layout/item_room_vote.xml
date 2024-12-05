@@ -2,28 +2,28 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="40dp"
-    android:paddingHorizontal="10dp"
+    android:layout_marginBottom="15dp"
     android:background="@drawable/layout_round_radius12_default"
     android:backgroundTint="@color/main_gray_400"
-    android:layout_marginBottom="15dp">
+    android:paddingHorizontal="10dp">
 
     <Button
         android:id="@+id/btn_item_room_vote_radio"
         android:layout_width="32dp"
         android:layout_height="32dp"
-        android:background="@drawable/baseline_radio_button_unchecked_24"
         android:layout_gravity="center"
-        android:backgroundTint="@color/white"/>
+        android:background="@drawable/baseline_radio_button_unchecked_24"
+        android:backgroundTint="@color/white" />
 
     <TextView
         android:id="@+id/tv_item_room_vote_content"
+        style="@style/pretendard20"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginStart="6dp"
-        style="@style/pretendard20"
-        android:text="투표 내용"
-        android:textColor="@color/white"
         android:layout_gravity="center"
-        android:padding="5dp" />
+        android:layout_marginStart="6dp"
+        android:padding="5dp"
+        android:text="투표 내용"
+        android:textColor="@color/white" />
 
 </LinearLayout>

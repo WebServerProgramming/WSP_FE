@@ -5,8 +5,8 @@
     android:id="@+id/main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".main.MainScheduleDetailActivity"
-    android:background="@color/black">
+    android:background="@color/black"
+    tools:context=".main.MainScheduleDetailActivity">
 
     <Button
         android:id="@+id/btn_main_schedule_detail_back"
@@ -21,13 +21,13 @@
 
     <TextView
         android:id="@+id/tv_main_schedule_detail_header"
+        style="@style/pretendard32"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="80dp"
         android:text="세부 일정"
         android:textColor="@color/white"
-        style="@style/pretendard32"
-        android:layout_marginTop="80dp"
-        android:layout_marginStart="20dp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
@@ -43,28 +43,28 @@
 
     <TextView
         android:id="@+id/tv_main_schedule_detail"
+        style="@style/pretendard20"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
+        android:layout_marginStart="10dp"
+        android:layout_marginEnd="20dp"
         android:text="투표 종료일: 행사 참가자"
         android:textColor="@color/white"
-        style="@style/pretendard20"
         app:layout_constraintBottom_toBottomOf="@+id/iv_main_schedule_detail"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@+id/iv_main_schedule_detail"
-        app:layout_constraintTop_toTopOf="@+id/iv_main_schedule_detail"
-        android:layout_marginStart="10dp"
-        android:layout_marginEnd="20dp"/>
+        app:layout_constraintTop_toTopOf="@+id/iv_main_schedule_detail" />
 
     <TextView
         android:id="@+id/tv_main_schedule_detail_people"
+        style="@style/pretendard32"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="260dp"
         android:text="인원"
         android:textColor="@color/white"
-        style="@style/pretendard32"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        android:layout_marginTop="260dp"
-        android:layout_marginStart="20dp"/>
+        app:layout_constraintTop_toTopOf="parent" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

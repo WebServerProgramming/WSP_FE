@@ -5,8 +5,8 @@
     android:id="@+id/main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".club.ClubListActivity"
-    android:background="@color/black">
+    android:background="@color/black"
+    tools:context=".club.ClubListActivity">
 
     <Button
         android:id="@+id/btn_club_list_back"
@@ -21,29 +21,29 @@
 
     <TextView
         android:id="@+id/tv_club_list"
+        style="@style/pretendard32"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_gravity="center"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="80dp"
+        android:layout_marginEnd="20dp"
         android:text="동아리 목록"
         android:textColor="@color/white"
-        style="@style/pretendard32"
-        android:layout_marginTop="80dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        android:layout_marginStart="20dp"
-        android:layout_marginEnd="20dp"/>
+        app:layout_constraintTop_toTopOf="parent" />
 
     <ImageView
         android:id="@+id/iv_club_list_search"
         android:layout_width="32dp"
         android:layout_height="32dp"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="150dp"
         android:background="@drawable/baseline_search_24"
         android:backgroundTint="@color/white"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        android:layout_marginTop="150dp"
-        android:layout_marginStart="20dp"/>
+        app:layout_constraintTop_toTopOf="parent" />
 
     <EditText
         android:id="@+id/et_club_list_search"
@@ -74,17 +74,18 @@
 
     <Button
         android:id="@+id/btn_club_list_AI"
+        style="@style/pretendard20"
         android:layout_width="match_parent"
         android:layout_height="60dp"
+        android:layout_marginStart="20dp"
+        android:layout_marginEnd="20dp"
         android:layout_marginBottom="60dp"
-        android:background="@drawable/layout_round_radius12_blue500"
+        android:background="@drawable/layout_round_radius12_default"
+        android:backgroundTint="@color/main_blue_500"
         android:text="AI에게 동아리 추천받기"
         android:textColor="@color/white"
-        style="@style/pretendard20"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        android:layout_marginStart="20dp"
-        android:layout_marginEnd="20dp"/>
+        app:layout_constraintStart_toStartOf="parent" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

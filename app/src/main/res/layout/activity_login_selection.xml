@@ -5,28 +5,29 @@
     android:id="@+id/main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".login.LoginSelectionActivity"
-    android:background="@color/black">
+    android:background="@color/black"
+    tools:context=".login.LoginSelectionActivity">
 
     <TextView
         android:id="@+id/tv_login_selection_title"
         style="@style/pretendard32"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginTop="210dp"
         android:text="어떤 방식으로 로그인할까요?"
         android:textColor="@color/white"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        android:layout_marginTop="210dp"/>
+        app:layout_constraintTop_toTopOf="parent" />
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:id="@+id/cl_login_selection_left"
         android:layout_width="176dp"
         android:layout_height="176dp"
-        android:layout_marginTop="391dp"
         android:layout_marginLeft="20dp"
-        android:background="@drawable/layout_round_radius12_blue200"
+        android:layout_marginTop="391dp"
+        android:background="@drawable/layout_round_radius12_default"
+        android:backgroundTint="@color/main_blue_200"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent">
 
@@ -34,11 +35,11 @@
             android:id="@+id/iv_login_selection_left"
             android:layout_width="120dp"
             android:layout_height="120dp"
+            android:layout_marginTop="6dp"
             android:src="@drawable/ic_login_selection_user"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            android:layout_marginTop="6dp"/>
+            app:layout_constraintTop_toTopOf="parent" />
 
         <TextView
             android:id="@+id/tv_login_selection_left"
@@ -59,7 +60,8 @@
         android:layout_height="176dp"
         android:layout_marginTop="391dp"
         android:layout_marginRight="20dp"
-        android:background="@drawable/layout_round_radius12_blue200"
+        android:background="@drawable/layout_round_radius12_default"
+        android:backgroundTint="@color/main_blue_200"
         android:paddingVertical="16dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="parent">
@@ -78,12 +80,12 @@
             style="@style/pretendard24"
             android:layout_width="63dp"
             android:layout_height="29dp"
+            android:layout_marginTop="10dp"
             android:text="관리자"
             android:textColor="@color/white"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/iv_login_selection_right"
-            android:layout_marginTop="10dp"/>
+            app:layout_constraintTop_toBottomOf="@+id/iv_login_selection_right" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 

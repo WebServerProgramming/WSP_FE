@@ -1,11 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:background="@color/black"
-    android:layout_marginBottom="30dp">
+    android:layout_marginBottom="30dp"
+    android:background="@color/black">
 
 
     <de.hdodenhof.circleimageview.CircleImageView
@@ -47,13 +46,13 @@
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginTop="1dp"
+        android:background="@drawable/layout_round_radius12_default"
+        android:backgroundTint="@color/main_blue_500"
         android:paddingHorizontal="5dp"
         android:text="별점"
         android:textColor="@color/white"
         app:layout_constraintStart_toStartOf="@+id/tv_item_club_club_introduction"
-        app:layout_constraintTop_toBottomOf="@+id/tv_item_club_club_introduction"
-        android:background="@drawable/layout_round_radius12_default"
-        android:backgroundTint="@color/main_blue_500"/>
+        app:layout_constraintTop_toBottomOf="@+id/tv_item_club_club_introduction" />
 
     <Button
         android:id="@+id/btn_item_club_list_add"

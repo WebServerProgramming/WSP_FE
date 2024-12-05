@@ -2,8 +2,8 @@
 <menu xmlns:android="http://schemas.android.com/apk/res/android">
     <item
         android:id="@+id/menu_room_challenge"
-        android:title="챌린지"/>
+        android:title="챌린지" />
     <item
         android:id="@+id/menu_room_review"
-        android:title="리뷰"/>
+        android:title="리뷰" />
 </menu>

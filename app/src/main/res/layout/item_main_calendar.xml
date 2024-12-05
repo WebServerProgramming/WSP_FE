@@ -24,18 +24,16 @@
 
             <TextView
                 android:id="@+id/tv_calendar_list"
+                style="@style/pretendard20"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
                 android:layout_marginLeft="12dp"
                 android:layout_weight="1"
-                android:fontFamily="@font/pretendard_semi_bold"
                 android:text="내용"
-                android:textColor="@color/secondary_grey_black_2"
-                android:textSize="20sp" />
+                android:textColor="@color/white" />
 
         </LinearLayout>
-
 
 
     </LinearLayout>

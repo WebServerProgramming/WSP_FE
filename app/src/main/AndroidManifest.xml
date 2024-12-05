@@ -55,9 +55,6 @@
             android:name=".mypage.MyPageAlertActivity"
             android:exported="false" />
         <activity
-            android:name=".main.RoomCreateActivity"
-            android:exported="false" />
-        <activity
             android:name=".mypage.MyPageActivity"
             android:exported="false" />
         <activity

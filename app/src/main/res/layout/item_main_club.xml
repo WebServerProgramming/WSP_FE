@@ -15,31 +15,24 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:padding="5dp">
+
             <de.hdodenhof.circleimageview.CircleImageView
                 android:id="@+id/iv_club"
                 android:layout_width="60dp"
                 android:layout_height="60dp"
-                android:src="@mipmap/ic_launcher"/>
+                android:src="@mipmap/ic_launcher" />
+
             <TextView
                 android:id="@+id/tv_club"
+                style="@style/pretendard20"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
+                android:layout_marginLeft="12dp"
                 android:layout_weight="1"
                 android:text="방이름"
-                android:fontFamily="@font/pretendard_semi_bold"
-                android:textColor="@color/secondary_grey_black_2"
-                android:textSize="20sp"
-                android:layout_marginLeft="12dp"/>
-            <de.hdodenhof.circleimageview.CircleImageView
-                android:id="@+id/iv_new"
-                android:layout_width="30dp"
-                android:layout_height="30dp"
-                android:src="@drawable/baseline_new_releases_24"
-                android:visibility="invisible"
-                />
+                android:textColor="@color/white" />
 
         </LinearLayout>
-
 
 
     </LinearLayout>

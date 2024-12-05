@@ -3,10 +3,10 @@
     <item
         android:id="@+id/menu_room"
         android:icon="@drawable/baseline_chat_24"
-        android:title="동아리"/>
+        android:title="동아리" />
     <item
         android:id="@+id/menu_calendar"
         android:icon="@drawable/baseline_calendar_month_24"
-        android:title="일정"/>
+        android:title="일정" />
 
 </menu>
