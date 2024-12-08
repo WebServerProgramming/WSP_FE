@@ -37,4 +37,8 @@ public interface RetrofitAPI {
     // get user list for schedule
     @GET("/v1/api/club/{clubId}/people")
     Call<ScheduleDetailResponse> getScheduleDetail(@Path("clubId") int clubId);
+
+    // get ChatGPT response for recommendation
+    @GET("/v1/api/chat")
+    Call<ChatResponse> getChat(@Query("keyword") String keyword);
 }

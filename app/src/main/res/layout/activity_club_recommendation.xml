@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/black"
+    tools:context=".club.ClubRecommendationActivity">
+
+    <Button
+        android:id="@+id/btn_club_recommendation_back"
+        android:layout_width="32dp"
+        android:layout_height="32dp"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="24dp"
+        android:background="@drawable/baseline_arrow_back_24"
+        android:backgroundTint="@color/white"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/tv_club_recommendation_title"
+        style="@style/pretendard20"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="24dp"
+        android:text="동아리 추천 도우미"
+        android:textColor="@color/white"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/rv_club_recommendation"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginHorizontal="20dp"
+        android:layout_marginTop="50dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tv_club_recommendation_title" />
+
+    <EditText
+        android:id="@+id/et_club_recommendation"
+        style="@style/pretendard20"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="20dp"
+        android:layout_marginBottom="30dp"
+        android:background="@drawable/layout_round_radius12_default"
+        android:backgroundTint="@color/main_gray_600"
+        android:hint="질문할 내용을 작성해주세요."
+        android:inputType="text"
+        android:maxLines="1"
+        android:paddingVertical="5dp"
+        android:paddingStart="5dp"
+        android:paddingEnd="40dp"
+        android:textColor="@color/white"
+        android:textColorHint="@color/main_gray_400"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <ImageButton
+        android:id="@+id/btn_club_recommendation_done"
+        android:layout_width="32dp"
+        android:layout_height="32dp"
+        android:layout_marginEnd="5dp"
+        android:layout_marginBottom="3dp"
+        android:background="@drawable/button_enabled"
+        android:src="@drawable/baseline_subdirectory_arrow_left_24"
+        app:layout_constraintBottom_toBottomOf="@+id/et_club_recommendation"
+        app:layout_constraintEnd_toEndOf="@+id/et_club_recommendation" />
+</androidx.constraintlayout.widget.ConstraintLayout>

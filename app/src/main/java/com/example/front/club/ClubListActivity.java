@@ -1,5 +1,6 @@
 package com.example.front.club;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
@@ -84,5 +85,13 @@ public class ClubListActivity extends AppCompatActivity {
             }
         });
 
+        Button btnAI = findViewById(R.id.btn_club_list_AI);
+        btnAI.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(ClubListActivity.this, ClubRecommendationActivity.class);
+                startActivity(intent);
+            }
+        });
     }
 }
