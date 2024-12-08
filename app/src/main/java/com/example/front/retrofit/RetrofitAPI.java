@@ -33,4 +33,8 @@ public interface RetrofitAPI {
     // get every club list with rating
     @GET("/v1/api/club")
     Call<ClubListResponse> getAllClubList();
+
+    // get user list for schedule
+    @GET("/v1/api/club/{clubId}/people")
+    Call<ScheduleDetailResponse> getScheduleDetail(@Path("clubId") int clubId);
 }
