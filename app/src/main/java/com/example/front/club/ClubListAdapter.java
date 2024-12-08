@@ -1,6 +1,7 @@
 package com.example.front.club;
 
 import android.content.Intent;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -38,7 +39,6 @@ public class ClubListAdapter extends RecyclerView.Adapter<ClubListAdapter.Custom
         holder.tvRoomListName.setText(arrayList.get(position).getTvRoomListName());
         holder.tvRoomListIntroduction.setText(arrayList.get(position).getTvRoomListIntroduction());
         holder.tvRoomListStar.setText(arrayList.get(position).getTvRoomListStar());
-
         holder.itemView.setTag(position);
         holder.itemView.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -53,7 +53,7 @@ public class ClubListAdapter extends RecyclerView.Adapter<ClubListAdapter.Custom
             @Override
             public void onClick(View view) {
                 Intent intent = new Intent(view.getContext(), ClubReviewActivity.class);
-                intent.putExtra("clubId", holder.getAdapterPosition());
+                intent.putExtra("clubId", holder.getItemId());
                 view.getContext().startActivity(intent);
             }
         });
