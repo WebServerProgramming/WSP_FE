@@ -44,6 +44,7 @@ public class ClubRecommendationActivity extends AppCompatActivity {
     private ImageButton btnClubRecommendationDone;
     private boolean isEtFilled;
 
+    private boolean isWorking;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -61,8 +62,10 @@ public class ClubRecommendationActivity extends AppCompatActivity {
         etClubRecommendation = findViewById(R.id.et_club_recommendation);
         btnClubRecommendationDone = findViewById(R.id.btn_club_recommendation_done);
 
+        btnClubRecommendationDone.setEnabled(false);
         etClubRecommendation.addTextChangedListener(textWatcher);
 
+        // recyclerView
         recyclerView = findViewById(R.id.rv_club_recommendation);
         linearLayoutManager = new LinearLayoutManager(this);
         recyclerView.setLayoutManager(linearLayoutManager);
@@ -71,14 +74,20 @@ public class ClubRecommendationActivity extends AppCompatActivity {
         clubRecommendationAdapter = new ClubRecommnedationAdapter(arrayList);
         recyclerView.setAdapter(clubRecommendationAdapter);
 
+        isWorking = false;
         btnClubRecommendationDone.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                if (isWorking) {
+                    return;
+                }
+                isWorking = true;
                 String temp = etClubRecommendation.getText().toString();
                 ClubRecommendationData clubRecommendationData =
                         new ClubRecommendationData(temp,true);
                 arrayList.add(clubRecommendationData);
-                clubRecommendationAdapter.notifyDataSetChanged();
+                clubRecommendationAdapter.notifyItemInserted(arrayList.size());
+                etClubRecommendation.setText("");
 
                 RetrofitAPI apiService = RetrofitClientInstance.getApiService(ClubRecommendationActivity.this);
                 // 동아리 목록 조회 API 호출
@@ -95,7 +104,7 @@ public class ClubRecommendationActivity extends AppCompatActivity {
                             // GPT 답변 추가
                             ClubRecommendationData clubRecommendationDataAI = new ClubRecommendationData(chatResponse.getPayload(), false);
                             arrayList.add(clubRecommendationDataAI);
-                            clubRecommendationAdapter.notifyDataSetChanged();
+                            clubRecommendationAdapter.notifyItemInserted(arrayList.size());
                         } else {
                             Log.e("API Error", "Response code: " + response.code());
                         }
@@ -105,6 +114,7 @@ public class ClubRecommendationActivity extends AppCompatActivity {
                         Log.e("API Error", "Failure: " + t.getMessage());
                     }
                 });
+                isWorking = false;
             }
         });
 
@@ -129,7 +139,7 @@ public class ClubRecommendationActivity extends AppCompatActivity {
     };
 
     private void checkAllFields() {
-        if (isEtFilled) {
+        if (isEtFilled && !isWorking) {
             btnClubRecommendationDone.setEnabled(true);
         } else {
             btnClubRecommendationDone.setEnabled(false);

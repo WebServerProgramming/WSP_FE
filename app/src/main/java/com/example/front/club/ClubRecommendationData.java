@@ -3,9 +3,9 @@ package com.example.front.club;
 public class ClubRecommendationData {
 
     private String content;
-    public Boolean isQuery;
+    public boolean isQuery;
 
-    public ClubRecommendationData(String content, Boolean isQuery) {
+    public ClubRecommendationData(String content, boolean isQuery) {
         this.content = content;
         this.isQuery = isQuery;
     }

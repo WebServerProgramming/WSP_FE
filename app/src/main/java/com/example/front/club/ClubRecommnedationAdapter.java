@@ -41,6 +41,11 @@ public class ClubRecommnedationAdapter extends RecyclerView.Adapter<ClubRecommne
             ColorStateList colorStateList = ColorStateList.valueOf(backgroundColor);
             holder.tvItemClubRecommendation.setBackgroundTintList(colorStateList);
             holder.llItemClubRecommendation.setGravity(Gravity.START);
+        } else {
+            int backgroundColor = Color.parseColor("#9CD1FF");
+            ColorStateList colorStateList = ColorStateList.valueOf(backgroundColor);
+            holder.tvItemClubRecommendation.setBackgroundTintList(colorStateList);
+            holder.llItemClubRecommendation.setGravity(Gravity.END);
         }
     }
 
