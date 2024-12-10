@@ -156,13 +156,16 @@ public class RoomActivity extends AppCompatActivity {
 
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
+        Intent prevIntent = getIntent();
         Intent intent;
         if (item.getItemId() == R.id.menu_room_challenge) {
             intent = new Intent(RoomActivity.this, ChallengeListActivity.class);
+            intent.putExtra("clubId",prevIntent.getIntExtra("clubId",0));
             startActivity(intent);
             return true;
         } else if (item.getItemId() == R.id.menu_room_review) {
             intent = new Intent(RoomActivity.this, RoomReviewActivity.class);
+            intent.putExtra("clubId",prevIntent.getIntExtra("clubId",0));
             startActivity(intent);
             return true;
         } else {

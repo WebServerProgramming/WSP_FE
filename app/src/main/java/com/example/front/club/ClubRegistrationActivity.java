@@ -1,8 +1,10 @@
 package com.example.front.club;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.text.Editable;
 import android.text.TextWatcher;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
@@ -11,10 +13,18 @@ import androidx.activity.EdgeToEdge;
 import androidx.appcompat.app.AppCompatActivity;
 
 import com.example.front.R;
+import com.example.front.retrofit.RetrofitAPI;
+import com.example.front.retrofit.RetrofitClientInstance;
+import com.example.front.retrofit.ReviewResponse;
+import com.example.front.retrofit.SingleStringResponse;
+
+import retrofit2.Call;
+import retrofit2.Callback;
+import retrofit2.Response;
 
 public class ClubRegistrationActivity extends AppCompatActivity {
     private EditText etClubRegistration;
-    private Button btnClubRegistrationDone;
+    private Button btnDone;
     private boolean isEtFilled;
 
     @Override
@@ -32,7 +42,40 @@ public class ClubRegistrationActivity extends AppCompatActivity {
         });
 
         etClubRegistration = findViewById(R.id.et_club_registration);
-        btnClubRegistrationDone = findViewById(R.id.btn_club_registration_done);
+        btnDone = findViewById(R.id.btn_club_registration_done);
+
+        etClubRegistration.addTextChangedListener(textWatcher);
+
+        btnDone.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = getIntent();
+
+                RetrofitAPI apiService = RetrofitClientInstance.getApiService(ClubRegistrationActivity.this);
+                // 동아리 목록 조회 API 호출
+                apiService.postClubRegistration(intent.getIntExtra("clubId", 0)).enqueue(new Callback<SingleStringResponse>() {
+                    @Override
+                    public void onResponse(Call<SingleStringResponse> call, Response<SingleStringResponse> response) {
+                        if (response.isSuccessful() && response.body() != null) {
+                            SingleStringResponse singleStringResponse = response.body();
+
+                            // 결과 로그 출력
+                            Log.d("API Result", "Code: " + singleStringResponse.getResult().getCode());
+                            Log.d("API Message", "Message: " + singleStringResponse.getResult().getMessage());
+                            Log.d("API Payload", "Payload" + singleStringResponse.getPayload());
+                            } else {
+                            Log.e("API Error", "Response code: " + response.code());
+                        }
+                    }
+                    @Override
+                    public void onFailure(Call<SingleStringResponse> call, Throwable t) {
+                        Log.e("API Error", "Failure: " + t.getMessage());
+                    }
+                });
+                finish();
+            }
+        });
+
     }
 
     private TextWatcher textWatcher = new TextWatcher() {
@@ -55,9 +98,9 @@ public class ClubRegistrationActivity extends AppCompatActivity {
 
     private void checkAllFields() {
         if (isEtFilled) {
-            btnClubRegistrationDone.setEnabled(true);
+            btnDone.setEnabled(true);
         } else {
-            btnClubRegistrationDone.setEnabled(false);
+            btnDone.setEnabled(false);
         }
     }
 }

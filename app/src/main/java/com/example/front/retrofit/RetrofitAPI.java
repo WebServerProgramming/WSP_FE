@@ -1,7 +1,12 @@
 package com.example.front.retrofit;
 
+import com.example.front.retrofit.request.RoomReviewRequest;
+
+import io.reactivex.rxjava3.core.Single;
 import retrofit2.Call;
+import retrofit2.http.Body;
 import retrofit2.http.GET;
+import retrofit2.http.POST;
 import retrofit2.http.Path;
 import retrofit2.http.Query;
 
@@ -41,4 +46,12 @@ public interface RetrofitAPI {
     // get ChatGPT response for recommendation
     @GET("/v1/api/chat")
     Call<ChatResponse> getChat(@Query("keyword") String keyword);
+
+    // post review
+    @POST("/v1/api/review/{clubId}/save")
+    Call<SingleStringResponse> postReview(@Path("clubId") int clubId, @Body RoomReviewRequest request);
+
+    // post club registration
+    @POST("/v1/api/club/{clubId}/join")
+    Call<SingleStringResponse> postClubRegistration(@Path("clubId") int clubId);
 }
