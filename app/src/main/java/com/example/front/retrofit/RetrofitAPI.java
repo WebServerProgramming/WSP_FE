@@ -54,4 +54,12 @@ public interface RetrofitAPI {
     // post club registration
     @POST("/v1/api/club/{clubId}/join")
     Call<SingleStringResponse> postClubRegistration(@Path("clubId") int clubId);
+
+    // get vote
+    @GET("/v1/api/vote/{clubId}")
+    Call<VoteResponse> getVote(@Path("clubId") int clubId);
+
+    // post vote
+    @POST("/v1/api/vote/{voteId}/{itemId}/attend")
+    Call<SingleIntResponse> postVote(@Path("voteId") int voteId, @Path("itemId") int itemId);
 }

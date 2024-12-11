@@ -4,6 +4,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
+import android.widget.RadioButton;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
@@ -16,6 +17,10 @@ import java.util.ArrayList;
 public class RoomVoteAdapter extends RecyclerView.Adapter<RoomVoteAdapter.CustomViewHolder> {
 
     private ArrayList<RoomVoteData> arrayList;
+
+    private int selectedPosition = -1;
+    public int selectedVoteId = -1;
+
 
     public RoomVoteAdapter(ArrayList<RoomVoteData> arrayList) {
         this.arrayList = arrayList;
@@ -34,11 +39,16 @@ public class RoomVoteAdapter extends RecyclerView.Adapter<RoomVoteAdapter.Custom
     public void onBindViewHolder(@NonNull RoomVoteAdapter.CustomViewHolder holder, int position) {
         String content = arrayList.get(position).getTvVoteContent();
         holder.tvVoteContent.setText(content);
-
+        holder.rbVote.setChecked(position == selectedPosition);
         holder.itemView.setTag(position);
         holder.itemView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                if (selectedPosition != position) {
+                    selectedPosition = position;
+                    selectedVoteId = arrayList.get(position).getVoteId();
+                    notifyItemChanged(selectedPosition);
+                }
                 //Intent intent = new Intent(view.getContext(), RoomActivity.class);
                 ///view.getContext().startActivity(intent);
                 //String curName = holder.tvClub.getText().toString();
@@ -63,12 +73,12 @@ public class RoomVoteAdapter extends RecyclerView.Adapter<RoomVoteAdapter.Custom
 
     public class CustomViewHolder extends RecyclerView.ViewHolder {
 
-        protected Button btnVoteRadio;
+        protected RadioButton rbVote;
         protected TextView tvVoteContent;
 
         public CustomViewHolder(@NonNull View itemView) {
             super(itemView);
-            this.btnVoteRadio = (Button) itemView.findViewById(R.id.btn_item_room_vote_radio);
+            this.rbVote = (RadioButton) itemView.findViewById(R.id.rb_item_room_vote);
             this.tvVoteContent = (TextView) itemView.findViewById(R.id.tv_item_room_vote_content);
         }
     }

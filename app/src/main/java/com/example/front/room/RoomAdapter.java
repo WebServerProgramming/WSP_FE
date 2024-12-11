@@ -1,5 +1,6 @@
 package com.example.front.room;
 
+import android.app.Activity;
 import android.content.Intent;
 import android.content.res.ColorStateList;
 import android.graphics.Color;
@@ -70,8 +71,10 @@ public class RoomAdapter extends RecyclerView.Adapter<RoomAdapter.CustomViewHold
         holder.itemView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                Intent prevIntent = ((Activity) view.getContext()).getIntent();
                 Intent intent = new Intent(view.getContext(), finalActivityClass);
                 intent.putExtra("noticeId", arrayList.get(position).getId());
+                intent.putExtra("clubId",prevIntent.getIntExtra("clubId",0));
                 view.getContext().startActivity(intent);
                 //String curName = holder.tvClub.getText().toString();
                 //Toast.makeText(view.getContext(), curName, Toast.LENGTH_SHORT).show();

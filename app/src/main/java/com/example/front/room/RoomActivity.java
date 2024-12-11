@@ -85,12 +85,12 @@ public class RoomActivity extends AppCompatActivity {
                 Log.e("API Error", "Failure: " + t.getMessage());
             }
         });
-        /*RoomData roomData = new RoomData("공지", "테스트용 공지");
-        arrayList.add(roomData);
-        arrayList.add(new RoomData("투표", "테스트용 투표"));
-        arrayList.add(new RoomData("행사", "테스트용 행사"));
-        arrayList.add(new RoomData("정기행사", "테스트용 정기행사"));
-        roomAdapter.notifyDataSetChanged();*/
+        //RoomData roomData = new RoomData("공지", "테스트용 공지",300);
+        //arrayList.add(roomData);
+        arrayList.add(new RoomData("투표", "테스트용 투표",300));
+        arrayList.add(new RoomData("행사", "테스트용 행사",300));
+        arrayList.add(new RoomData("정기행사", "테스트용 정기행사",300));
+        roomAdapter.notifyDataSetChanged();
 
         ivRoomProgress = (ImageView) findViewById(R.id.iv_room_progress);
         clRoomProgress = (ConstraintLayout) findViewById(R.id.cl_room_progress);

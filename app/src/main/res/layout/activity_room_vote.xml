@@ -98,7 +98,6 @@
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:background="@drawable/button_enabled"
-            android:enabled="false"
             android:text="투표하기"
             android:textColor="@color/white"
             app:layout_constraintBottom_toBottomOf="parent"
