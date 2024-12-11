@@ -9,9 +9,6 @@ import android.widget.TextView;
 
 import androidx.activity.EdgeToEdge;
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.core.graphics.Insets;
-import androidx.core.view.ViewCompat;
-import androidx.core.view.WindowInsetsCompat;
 
 import com.example.front.R;
 import com.example.front.retrofit.RetrofitAPI;
@@ -22,7 +19,7 @@ import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
 
-public class NoticeActivity extends AppCompatActivity {
+public class RoomNoticeActivity extends AppCompatActivity {
     private TextView tvRoomNoticeTitle;
     private TextView tvRoomNoticeContent;
 

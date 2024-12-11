@@ -13,17 +13,17 @@ import com.example.front.R;
 
 import java.util.ArrayList;
 
-public class VoteAdapter extends RecyclerView.Adapter<VoteAdapter.CustomViewHolder> {
+public class RoomVoteAdapter extends RecyclerView.Adapter<RoomVoteAdapter.CustomViewHolder> {
 
-    private ArrayList<VoteData> arrayList;
+    private ArrayList<RoomVoteData> arrayList;
 
-    public VoteAdapter(ArrayList<VoteData> arrayList) {
+    public RoomVoteAdapter(ArrayList<RoomVoteData> arrayList) {
         this.arrayList = arrayList;
     }
 
     @NonNull
     @Override
-    public VoteAdapter.CustomViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
+    public RoomVoteAdapter.CustomViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
         View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.item_room_vote, parent, false);
         CustomViewHolder holder = new CustomViewHolder(view);
 
@@ -31,7 +31,7 @@ public class VoteAdapter extends RecyclerView.Adapter<VoteAdapter.CustomViewHold
     }
 
     @Override
-    public void onBindViewHolder(@NonNull VoteAdapter.CustomViewHolder holder, int position) {
+    public void onBindViewHolder(@NonNull RoomVoteAdapter.CustomViewHolder holder, int position) {
         String content = arrayList.get(position).getTvVoteContent();
         holder.tvVoteContent.setText(content);
 

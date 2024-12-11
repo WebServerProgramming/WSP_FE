@@ -12,12 +12,12 @@ import com.example.front.R;
 
 import java.util.ArrayList;
 
-public class VoteActivity extends AppCompatActivity {
+public class RoomVoteActivity extends AppCompatActivity {
 
 
     // RecyclerView
-    private ArrayList<VoteData> arrayList;
-    private VoteAdapter voteAdapter;
+    private ArrayList<RoomVoteData> arrayList;
+    private RoomVoteAdapter roomVoteAdapter;
     private RecyclerView recyclerView;
     private LinearLayoutManager linearLayoutManager;
 
@@ -32,13 +32,13 @@ public class VoteActivity extends AppCompatActivity {
         recyclerView.setLayoutManager(linearLayoutManager);
 
         arrayList = new ArrayList<>();
-        voteAdapter = new VoteAdapter(arrayList);
-        recyclerView.setAdapter(voteAdapter);
+        roomVoteAdapter = new RoomVoteAdapter(arrayList);
+        recyclerView.setAdapter(roomVoteAdapter);
 
-        arrayList.add(new VoteData("투표"));
-        arrayList.add(new VoteData("행사"));
-        arrayList.add(new VoteData("정기행사"));
-        voteAdapter.notifyDataSetChanged();
+        arrayList.add(new RoomVoteData("투표"));
+        arrayList.add(new RoomVoteData("행사"));
+        arrayList.add(new RoomVoteData("정기행사"));
+        roomVoteAdapter.notifyDataSetChanged();
 
         Button btnBack = findViewById(R.id.btn_room_vote_back);
         btnBack.setOnClickListener(new View.OnClickListener() {

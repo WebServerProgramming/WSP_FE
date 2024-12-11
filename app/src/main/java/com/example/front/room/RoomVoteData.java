@@ -1,6 +1,6 @@
 package com.example.front.room;
 
-public class VoteData {
+public class RoomVoteData {
 
     private String tvVoteContent;
 
@@ -12,7 +12,7 @@ public class VoteData {
         this.tvVoteContent = tvVoteContent;
     }
 
-    public VoteData(String tvVoteContent) {
+    public RoomVoteData(String tvVoteContent) {
         this.tvVoteContent = tvVoteContent;
     }
 }

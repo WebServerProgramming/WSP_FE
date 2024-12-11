@@ -38,21 +38,23 @@ public class RoomAdapter extends RecyclerView.Adapter<RoomAdapter.CustomViewHold
         holder.tvRoomCategory.setText(category);
 
         int backgroundColor = Color.parseColor("#CCCCCC");
-        Class<?> activityClass = NoticeActivity.class;
+        Class<?> activityClass = RoomNoticeActivity.class;
         switch (category) {
             case "공지":
                 backgroundColor = Color.parseColor("#000000");
-                activityClass = NoticeActivity.class;
+                activityClass = RoomNoticeActivity.class;
                 break;
             case "투표":
                 backgroundColor = Color.parseColor("#3C55EE");
-                activityClass = VoteActivity.class;
+                activityClass = RoomVoteActivity.class;
                 break;
             case "행사":
                 backgroundColor = Color.parseColor("#FF7E3E");
+                activityClass = RoomEventActivity.class;
                 break;
             case "정기행사":
                 backgroundColor = Color.parseColor("#30E3C8");
+                activityClass = RoomReventActivity.class;
                 break;
         }
         // ColorStateList 생성
