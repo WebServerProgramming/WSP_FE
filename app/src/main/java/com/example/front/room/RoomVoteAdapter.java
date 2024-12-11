@@ -45,8 +45,11 @@ public class RoomVoteAdapter extends RecyclerView.Adapter<RoomVoteAdapter.Custom
             @Override
             public void onClick(View view) {
                 if (selectedPosition != position) {
+                    int oldPosition = selectedPosition;
                     selectedPosition = position;
                     selectedVoteId = arrayList.get(position).getVoteId();
+
+                    notifyItemChanged(oldPosition);
                     notifyItemChanged(selectedPosition);
                 }
                 //Intent intent = new Intent(view.getContext(), RoomActivity.class);
