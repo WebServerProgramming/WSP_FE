@@ -17,6 +17,7 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.front.R;
 import com.example.front.club.ClubReviewData;
+import com.example.front.retrofit.CalendarResponse;
 import com.example.front.retrofit.RetrofitAPI;
 import com.example.front.retrofit.RetrofitClientInstance;
 import com.example.front.retrofit.ReviewResponse;
@@ -146,6 +147,31 @@ public class RoomActivity extends AppCompatActivity {
 
         Toolbar toolbar = findViewById(R.id.tb_room);  // 툴바 레이아웃에서 ID를 가져옵니다.
         setSupportActionBar(toolbar);
+
+        Intent intent = getIntent();
+        RetrofitAPI apiService2 = RetrofitClientInstance.getApiService(this);
+        // 동아리 목록 조회 API 호출
+        apiService2.getClubCalendar(intent.getIntExtra("clubId",0)).enqueue(new Callback<CalendarResponse>() {
+            @Override
+            public void onResponse(Call<CalendarResponse> call, Response<CalendarResponse> response) {
+                if (response.isSuccessful() && response.body() != null) {
+                    CalendarResponse calendarResponse = response.body();
+
+                    // 결과 로그 출력
+                    Log.d("API Result", "Code: " + calendarResponse.getResult().getCode());
+                    Log.d("API Message", "Message: " + calendarResponse.getResult().getMessage());
+                    for (String payload : calendarResponse.getPayload()) {
+                        Log.d("Review", "Payload: " + payload);
+                    }
+                } else {
+                    Log.e("API Error", "Response code: " + response.code());
+                }
+            }
+            @Override
+            public void onFailure(Call<CalendarResponse> call, Throwable t) {
+                Log.e("API Error", "Failure: " + t.getMessage());
+            }
+        });
     }
 
     @Override

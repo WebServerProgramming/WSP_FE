@@ -62,4 +62,12 @@ public interface RetrofitAPI {
     // post vote
     @POST("/v1/api/vote/{voteId}/{itemId}/attend")
     Call<SingleIntResponse> postVote(@Path("voteId") int voteId, @Path("itemId") int itemId);
+
+    // get all calendar
+    @GET("/v1/api/calendar/all")
+    Call<CalendarResponse> getAllCalendar();
+
+    // get single calendar for club
+    @GET("/v1/api/calendar/{clubId}/single")
+    Call<CalendarResponse> getClubCalendar(@Path("clubId") int clubId);
 }

@@ -1,6 +1,7 @@
 package com.example.front.main;
 
 import android.os.Bundle;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -12,6 +13,11 @@ import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.front.R;
+import com.example.front.retrofit.CalendarResponse;
+import com.example.front.retrofit.RetrofitAPI;
+import com.example.front.retrofit.RetrofitClientInstance;
+import com.example.front.retrofit.RoomResponse;
+import com.example.front.room.RoomData;
 import com.prolificinteractive.materialcalendarview.CalendarDay;
 import com.prolificinteractive.materialcalendarview.MaterialCalendarView;
 
@@ -20,6 +26,10 @@ import java.util.Calendar;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
+
+import retrofit2.Call;
+import retrofit2.Callback;
+import retrofit2.Response;
 
 public class FragSchedule extends Fragment {
     private View view;
@@ -80,6 +90,31 @@ public class FragSchedule extends Fragment {
 
         Decorator decorator = new Decorator(calendarDayList, getActivity());
         calendarView.addDecorator(decorator);
+
+
+        RetrofitAPI apiService = RetrofitClientInstance.getApiService(getActivity());
+        // 동아리 목록 조회 API 호출
+        apiService.getAllCalendar().enqueue(new Callback<CalendarResponse>() {
+            @Override
+            public void onResponse(Call<CalendarResponse> call, Response<CalendarResponse> response) {
+                if (response.isSuccessful() && response.body() != null) {
+                    CalendarResponse calendarResponse = response.body();
+
+                    // 결과 로그 출력
+                    Log.d("API Result", "Code: " + calendarResponse.getResult().getCode());
+                    Log.d("API Message", "Message: " + calendarResponse.getResult().getMessage());
+                    for (String payload : calendarResponse.getPayload()) {
+                        Log.d("Review", "Payload: " + payload);
+                    }
+                } else {
+                    Log.e("API Error", "Response code: " + response.code());
+                }
+            }
+            @Override
+            public void onFailure(Call<CalendarResponse> call, Throwable t) {
+                Log.e("API Error", "Failure: " + t.getMessage());
+            }
+        });
 
         return view;
         // return super.onCreateView(inflater, container, savedInstanceState);
